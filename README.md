@@ -7,6 +7,6 @@ A dark theme for [Emacs](https://www.gnu.org/software/emacs/), inspired from [Ni
 
 ## Installation (with MELPA)
 
-    M-x package-install RET niflheim-theme
+    M-x package-install RET zerodark-theme
 
 Copyright 2015 (C) Nicolas Petton
