@@ -36,6 +36,7 @@
       (background-orange "#4a473d")
       (hl-line "#2c323b")
       (grey "#cccccc")
+      (grey-dark "#666666")
       (highlight "#3e4451")
       (comment "#5c6370")
       (orange "#da8548")
@@ -62,17 +63,17 @@
    `(secondary-selection ((,class (:background ,highlight :foreground ,default))))
    `(isearch ((,class (:background ,orange :foreground ,highlight))))
    `(lazy-highlight ((,class (:background ,peach :foreground ,highlight))))
-   `(hl-line ((,class (:background ,hl-line :underline nil :inherit nil))))
+   `(hl-line ((,class (:background ,hl-line :underline unspecified :inherit nil))))
 
    ;; Font lock faces
-   `(font-lock-builtin-face ((,class (:foreground ,red :weight bold))))
+   `(font-lock-builtin-face ((,class (:foreground ,blue :weight bold))))
    `(font-lock-comment-face ((,class (:foreground ,comment :slant italic))))
    `(font-lock-constant-face ((,class (:foreground ,orange :weight bold))))
    `(font-lock-function-name-face ((,class (:foreground ,blue))))
    `(font-lock-keyword-face ((,class (:foreground ,purple :weight bold))))
    `(font-lock-string-face ((,class (:foreground ,green))))
    `(font-lock-doc-face ((,class (:foreground ,comment))))
-   `(font-lock-type-face ((,class (:foreground ,peach :weight bold))))
+   `(font-lock-type-face ((,class (:foreground ,blue))))
    `(font-lock-variable-name-face ((,class (:foreground ,blue))))
    `(font-lock-warning-face ((,class (:foreground ,red :weight bold :background ,background-red))))
 
@@ -92,7 +93,9 @@
    `(escape-glyph ((,class (:foreground ,blue :weight bold))))
 
    ;; linum
-   `(linum ((,class (:foreground ,comment :background unspecified))))
+   `(linum ((,class (:foreground ,comment :background ,background))))
+   ;; from hlinum
+   `(linum-highlight-face ((,class (:foreground ,blue ,background ,background-blue))))
 
    ;; eshell
    `(eshell-prompt ((,class (:foreground ,orange :background ,background :weight bold))))
@@ -142,13 +145,14 @@
 
    ;; magit
    `(magit-diff-context-highlight ((,class (:background ,background-darker))))
+   `(magit-diff-file-heading ((,class (:weight normal))))
    `(magit-diff-removed-highlight ((,class (:background ,diff-removed-background))))
    `(magit-diff-removed ((,class (:background ,diff-removed-background))))
    `(magit-diff-added-highlight ((,class (:background ,diff-added-background))))
    `(magit-diff-added ((,class (:background ,diff-added-background))))
 
    `(magit-section-highlight ((,class (:background ,background-darker))))
-   `(magit-section-heading ((,class (:foreground ,blue :weight bold))))
+   `(magit-section-heading ((,class (:foreground ,grey :weight bold))))
    `(magit-branch-current ((,class (:foreground ,blue :box 1))))
    `(magit-branch-local ((,class (:foreground ,purple :box 1))))
    `(magit-branch-remote ((,class (:foreground ,green :box 1))))
@@ -174,7 +178,7 @@
    `(notmuch-crypto-part-header ((,class (:foreground ,blue))))
    `(notmuch-crypto-decryption ((,class (:foreground ,purple))))
    `(notmuch-crypto-signature-unknown ((,class (:foreground ,red))))
-   `(notmuch-crypto-signature-good ((,class (:background ,green :foreground ,default :weight bold))))
+   `(notmuch-crypto-signature-good ((,class (:background ,blue :foreground ,background :weight bold))))
    `(notmuch-crypto-signature-bad ((,class (:background ,red :foreground ,background :weight bold))))
 
    ;; company
@@ -194,12 +198,14 @@
    `(web-mode-html-tag-face ((,class (:foreground ,purple :weight bold))))
 
    ;; js2-mode
-   `(js2-function-param ((,class (:foreground ,peach :weight bold))))
+   `(js2-function-param ((,class (:foreground ,blue))))
 
    ;; flycheck
    `(flycheck-fringe-error ((,class (:foreground ,red :background ,background-red :weight bold :inverse-video t))))
    `(flycheck-fringe-warning ((,class (:background ,background-orange :foreground ,orange :weight bold :inverse-video t))))
    `(flycheck-fringe-info ((,class (:background ,background-blue :foreground ,blue :weight bold :inverse-video t))))
+   `(flycheck-warning ((,class (:underline (:color ,red :style wave)))))
+   `(flycheck-error ((,class (:underline (:color ,red :style wave)))))
 
    ;; FIC
    `(font-lock-fic-face ((,class (:foreground ,background :background ,red :weight bold))))
