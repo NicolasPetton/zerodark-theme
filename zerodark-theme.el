@@ -83,7 +83,7 @@
    `(header-line ((,class (:inherit mode-line-inactive))))
 
    ;; mml
-   `(message-mml-face ((,class (:foreground ,orange))))
+   `(message-mml-face ((,class (:foreground ,comment))))
 
    ;; Org-clock mode line
    `(org-mode-line-clock ((,class (:background unspecified (:inherit mode-line)))))
@@ -156,7 +156,14 @@
    `(magit-branch-current ((,class (:foreground ,blue :box 1))))
    `(magit-branch-local ((,class (:foreground ,purple :box 1))))
    `(magit-branch-remote ((,class (:foreground ,green :box 1))))
+
+   `(magit-reflog-reset ((,class (:background ,background-red :foreground ,red :weight bold))))
+   `(magit-reflog-amend ((,class (:background ,background-blue :foreground ,blue :weight bold))))
+   `(magit-reflog-rebase ((,class (:background ,background-blue :foreground ,blue :weight bold))))
+   `(magit-reflog-commit ((,class (:background ,background-green :foreground ,green :weight bold))))
+
    `(git-commit-summary ((,class (:weight bold))))
+
    `(magit-tag ((,class (:foreground ,purple :weight bold :box 1 :background "#202020"))))
 
    ;; Message faces
