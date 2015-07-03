@@ -65,6 +65,8 @@
    `(lazy-highlight ((,class (:background ,peach :foreground ,highlight))))
    `(hl-line ((,class (:background ,hl-line :underline unspecified :inherit nil))))
 
+   `(match ((,class (:background ,background-green))))
+
    ;; Font lock faces
    `(font-lock-builtin-face ((,class (:foreground ,blue :weight bold))))
    `(font-lock-comment-face ((,class (:foreground ,comment :slant italic))))
@@ -219,8 +221,8 @@
 
    ;; org-mode todo WORK IN PROGRESS
    `(org-hide ((,class (:foreground ,background))))
-   `(org-todo ((,class (:foreground ,red :weight bold))))
-   `(org-done ((,class (:foreground ,blue :weight bold))))
+   `(org-todo ((,class (:foreground ,red :background ,background-red :weight bold))))
+   `(org-done ((,class (:foreground ,blue :background ,background-blue :weight bold))))
    `(org-date ((,class (:background ,background-lighter))))
    `(org-scheduled-previously ((,class (:foreground ,red))))
    `(org-scheduled ((,class (:foreground ,orange))))
