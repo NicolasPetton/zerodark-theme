@@ -188,6 +188,7 @@
    `(notmuch-crypto-decryption ((,class (:foreground ,purple))))
    `(notmuch-crypto-signature-unknown ((,class (:foreground ,red))))
    `(notmuch-crypto-signature-good ((,class (:background ,blue :foreground ,background :weight bold))))
+   `(notmuch-crypto-signature-good-key ((,class (:background ,blue :foreground ,background :weight bold))))
    `(notmuch-crypto-signature-bad ((,class (:background ,red :foreground ,background :weight bold))))
 
    ;; company
