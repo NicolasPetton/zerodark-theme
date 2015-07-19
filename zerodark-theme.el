@@ -84,6 +84,16 @@
    `(mode-line-inactive ((,class (:background ,background-darker :height 0.9 :foreground ,default :box (:line-width 4 :color ,background-darker)))))
    `(header-line ((,class (:inherit mode-line-inactive))))
 
+   ;; powerline
+   (when (featurep 'powerline)
+     `(mode-line ((,class (:background ,background-blue :height 0.9 :foreground ,blue)))))
+   (when (featurep 'powerline)
+     `(mode-line-inactive ((,class (:background ,background-darker :height 0.9 :foreground ,default)))))
+   (when (featurep 'powerline)
+     `(powerline-active1 ((,class (:height 0.9 :foreground ,blue :background ,background-darker)))))
+   (when (featurep 'powerline)
+     `(powerline-active2 ((,class (:height 0.9 :foreground ,blue :background ,background-lighter)))))
+
    ;; mml
    `(message-mml-face ((,class (:foreground ,comment))))
 
