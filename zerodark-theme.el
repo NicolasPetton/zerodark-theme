@@ -38,7 +38,7 @@
       (grey "#cccccc")
       (grey-dark "#666666")
       (highlight "#3e4451")
-      (comment "#5c6370")
+      (comment "#687080")
       (orange "#da8548")
       (red "#ff6c6b")
       (purple "#c678dd")
