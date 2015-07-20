@@ -25,6 +25,15 @@
 (deftheme zerodark
   "A dark medium contrast theme")
 
+(defgroup zerodark
+  nil
+  "A dark theme inspired from One Dark and Niflheim.")
+
+(defcustom zerodark-use-paddings-in-mode-line t
+  "When non-nil, use top and bottom paddings in the mode-line."
+  :type 'boolean
+  :group 'zerodark)
+
 (let ((class '((class color) (min-colors 89)))
       (default "#abb2bf")
       (background "#282c34")
@@ -80,19 +89,17 @@
    `(font-lock-warning-face ((,class (:foreground ,red :weight bold :background ,background-red))))
 
    ;; Mode line faces
-   `(mode-line ((,class (:background ,background-blue :height 0.9 :foreground ,blue :box (:line-width 4 :color ,background-blue)))))
-   `(mode-line-inactive ((,class (:background ,background-darker :height 0.9 :foreground ,default :box (:line-width 4 :color ,background-darker)))))
+   `(mode-line ((,class (:background ,background-blue :height 0.9 :foreground ,blue
+                                     :box ,(when zerodark-use-paddings-in-mode-line
+                                              (list :line-width 4 :color background-blue))))))
+   `(mode-line-inactive ((,class (:background ,background-darker :height 0.9 :foreground ,default
+                                              :box ,(when zerodark-use-paddings-in-mode-line
+                                                       (list :line-width 4 :color background-darker))))))
    `(header-line ((,class (:inherit mode-line-inactive))))
 
    ;; powerline
-   (when (featurep 'powerline)
-     `(mode-line ((,class (:background ,background-blue :height 0.9 :foreground ,blue)))))
-   (when (featurep 'powerline)
-     `(mode-line-inactive ((,class (:background ,background-darker :height 0.9 :foreground ,default)))))
-   (when (featurep 'powerline)
-     `(powerline-active1 ((,class (:height 0.9 :foreground ,blue :background ,background-darker)))))
-   (when (featurep 'powerline)
-     `(powerline-active2 ((,class (:height 0.9 :foreground ,blue :background ,background-lighter)))))
+   `(powerline-active1 ((,class (:height 0.9 :foreground ,blue :background ,background-darker))))
+   `(powerline-active2 ((,class (:height 0.9 :foreground ,blue :background ,background-lighter))))
 
    ;; mml
    `(message-mml-face ((,class (:foreground ,comment))))
