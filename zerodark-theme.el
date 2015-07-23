@@ -331,6 +331,10 @@
    `(helm-ff-symlink ((,class (:foreground ,orange))))
    `(helm-ff-invalid-symlink ((,class (:foreground ,red :weight bold :background ,background-red))))
    `(helm-history-deleted ((,class (:foreground ,red :weight bold :background ,background-red))))
+
+   ;; visible mark
+   `(visible-mark-face1 ((,class (:foreground ,red :inverse-video t))))
+   `(visible-mark-face2 ((,class (:foreground ,orange :inverse-video t))))
    ))
 
 
