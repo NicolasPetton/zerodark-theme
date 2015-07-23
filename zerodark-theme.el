@@ -309,6 +309,28 @@
    `(ediff-odd-diff-A ((,class (:background ,highlight :foreground unspecified))))
    `(ediff-odd-diff-B ((,class (:background ,highlight :foreground unspecified))))
    `(ediff-odd-diff-C ((,class (:background ,highlight :foreground unspecified))))
+
+   ;; helm
+   `(helm-candidate-number ((,class (:weight bold))))
+   `(helm-header-line-left-margin ((,class (:weight bold :foreground ,red))))
+   `(helm-source-header ((,class (:height 1.2 :weight bold :foreground ,blue :background ,background-blue))))
+   `(helm-selection ((,class (:background ,background-lighter))))
+   `(helm-match ((,class (:foreground ,blue))))
+   `(helm-M-x-key ((,class (:foreground ,blue :weight bold :background ,background-blue))))
+   `(helm-visible-mark ((,class (:weight bold :foreground ,orange :background ,background-darker))))
+
+   `(helm-buffer-directory ((,class (:foreground ,purple))))
+   `(helm-buffer-file ((,class ())))
+   `(helm-buffer-saved-out ((,class (:foreground ,red :weight bold))))
+
+   `(helm-ff-directory ((,class (:foreground ,purple))))
+   `(helm-ff-dotted-directory ((,class (:foreground ,purple))))
+   `(helm-ff-prefix ((,class (:weight bold :foreground ,red))))
+   `(helm-ff-file ((,class ())))
+   `(helm-ff-executable ((,class (:foreground ,green :weight bold :background ,background-green))))
+   `(helm-ff-symlink ((,class (:foreground ,orange))))
+   `(helm-ff-invalid-symlink ((,class (:foreground ,red :weight bold :background ,background-red))))
+   `(helm-history-deleted ((,class (:foreground ,red :weight bold :background ,background-red))))
    ))
 
 
