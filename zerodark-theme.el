@@ -40,6 +40,7 @@
       (background-darker "#21252b")
       (background-lighter "#3a3f4b")
       (background-red "#4c3840")
+      (background-purple "#48384c")
       (background-blue "#38394c")
       (background-green "#3d4a41")
       (background-orange "#4a473d")
