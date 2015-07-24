@@ -318,6 +318,7 @@
    `(helm-match ((,class (:foreground ,blue))))
    `(helm-M-x-key ((,class (:foreground ,blue :weight bold :background ,background-blue))))
    `(helm-visible-mark ((,class (:weight bold :foreground ,orange :background ,background-darker))))
+   `(helm-prefarg ((,class (:weight bold :foreground ,red :background ,background-red))))
 
    `(helm-buffer-directory ((,class (:foreground ,purple))))
    `(helm-buffer-file ((,class ())))
