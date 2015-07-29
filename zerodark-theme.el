@@ -183,6 +183,8 @@
    `(magit-reflog-rebase ((,class (:background ,background-blue :foreground ,blue :weight bold))))
    `(magit-reflog-commit ((,class (:background ,background-green :foreground ,green :weight bold))))
 
+   `(magit-blame-heading ((,class (:foreground ,green :background ,background-green :box 1))))
+
    `(git-commit-summary ((,class (:weight bold))))
 
    `(magit-tag ((,class (:foreground ,purple :weight bold :box 1 :background "#202020"))))
