@@ -73,7 +73,7 @@
    `(region ((,class (:background ,highlight :foreground ,default))))
    `(secondary-selection ((,class (:background ,highlight :foreground ,default))))
    `(isearch ((,class (:background ,orange :foreground ,highlight))))
-   `(lazy-highlight ((,class (:background ,peach :foreground ,highlight))))
+   `(lazy-highlight ((,class (:background ,grey-dark :foreground ,peach))))
    `(hl-line ((,class (:background ,hl-line :underline unspecified :inherit nil))))
 
    `(match ((,class (:background ,background-green))))
@@ -318,22 +318,25 @@
    `(helm-header-line-left-margin ((,class (:weight bold :foreground ,red))))
    `(helm-source-header ((,class (:height 1.2 :weight bold :foreground ,blue :background ,background-blue))))
    `(helm-selection ((,class (:background ,background-lighter))))
-   `(helm-match ((,class (:foreground ,red :background ,background-red :weight bold))))
+   `(helm-match ((,class (:foreground ,purple :background ,background-purple :weight bold))))
+   `(helm-match-item ((,class (:inherit isearch))))
    `(helm-M-x-key ((,class (:foreground ,blue :weight bold :background ,background-blue))))
    `(helm-visible-mark ((,class (:weight bold :foreground ,orange :background ,background-darker))))
    `(helm-prefarg ((,class (:weight bold :foreground ,red :background ,background-red))))
    `(helm-separator ((,class (:weight bold :foreground , blue))))
 
-   `(helm-grep-file ((,class (:foreground ,purple))))
+   `(helm-grep-file ((,class ())))
    `(helm-grep-finish ((,class (:foreground ,green))))
    `(helm-grep-running ((,class (:foreground ,red))))
    `(helm-grep-lineno ((,class (:foreground ,blue))))
-   `(helm-grep-match ((,class (:foreground ,red :background ,background-red :weight bold))))
+   `(helm-grep-match ((,class (:foreground ,purple :background ,background-purple :weight bold))))
 
-   `(helm-moccur-buffer ((,class (:foreground ,purple))))
+   `(helm-moccur-buffer ((,class ())))
 
    `(helm-buffer-directory ((,class (:foreground ,purple))))
    `(helm-buffer-file ((,class ())))
+   `(helm-buffer-process ((,class (:foreground ,purple))))
+   `(helm-buffer-size ((,class (:foreground ,blue))))
    `(helm-buffer-saved-out ((,class (:foreground ,red :weight bold))))
 
    `(helm-ff-directory ((,class (:foreground ,purple))))
