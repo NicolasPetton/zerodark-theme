@@ -318,10 +318,19 @@
    `(helm-header-line-left-margin ((,class (:weight bold :foreground ,red))))
    `(helm-source-header ((,class (:height 1.2 :weight bold :foreground ,blue :background ,background-blue))))
    `(helm-selection ((,class (:background ,background-lighter))))
-   `(helm-match ((,class (:foreground ,blue))))
+   `(helm-match ((,class (:foreground ,red :background ,background-red :weight bold))))
    `(helm-M-x-key ((,class (:foreground ,blue :weight bold :background ,background-blue))))
    `(helm-visible-mark ((,class (:weight bold :foreground ,orange :background ,background-darker))))
    `(helm-prefarg ((,class (:weight bold :foreground ,red :background ,background-red))))
+   `(helm-separator ((,class (:weight bold :foreground , blue))))
+
+   `(helm-grep-file ((,class (:foreground ,purple))))
+   `(helm-grep-finish ((,class (:foreground ,green))))
+   `(helm-grep-running ((,class (:foreground ,red))))
+   `(helm-grep-lineno ((,class (:foreground ,blue))))
+   `(helm-grep-match ((,class (:foreground ,red :background ,background-red :weight bold))))
+
+   `(helm-moccur-buffer ((,class (:foreground ,purple))))
 
    `(helm-buffer-directory ((,class (:foreground ,purple))))
    `(helm-buffer-file ((,class ())))
