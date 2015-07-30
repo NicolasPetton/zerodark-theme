@@ -50,6 +50,7 @@
       (highlight "#3e4451")
       (comment "#687080")
       (orange "#da8548")
+      (orange-light "#ddbd78")
       (red "#ff6c6b")
       (purple "#c678dd")
       (blue "#61afef")
@@ -72,8 +73,8 @@
    `(highlight ((,class (:background ,highlight :foreground ,default :underline nil))))
    `(region ((,class (:background ,highlight :foreground ,default))))
    `(secondary-selection ((,class (:background ,highlight :foreground ,default))))
-   `(isearch ((,class (:background ,orange :foreground ,highlight))))
-   `(lazy-highlight ((,class (:background ,grey-dark :foreground ,peach))))
+   `(isearch ((,class (:background ,orange-light :foreground ,highlight))))
+   `(lazy-highlight ((,class (:background ,grey-dark :foreground ,orange-light))))
    `(hl-line ((,class (:background ,hl-line :underline unspecified :inherit nil))))
 
    `(match ((,class (:background ,background-green))))
