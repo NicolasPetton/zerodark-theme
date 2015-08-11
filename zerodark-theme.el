@@ -53,7 +53,9 @@
       (orange-light "#ddbd78")
       (red "#ff6c6b")
       (purple "#c678dd")
+      (purple-dark "#64446d")
       (blue "#61afef")
+      (blue-dark "#1f5582")
       (green "#98be65")
       (green-light "#9eac8c")
       (peach "PeachPuff3")
@@ -183,6 +185,9 @@
    `(magit-reflog-amend ((,class (:background ,background-blue :foreground ,blue :weight bold))))
    `(magit-reflog-rebase ((,class (:background ,background-blue :foreground ,blue :weight bold))))
    `(magit-reflog-commit ((,class (:background ,background-green :foreground ,green :weight bold))))
+
+   `(magit-bisect-bad ((,class (:background ,background-red :foreground ,red :box 1))))
+   `(magit-bisect-good ((,class (:background ,background-blue :foreground ,blue :box 1))))
 
    `(magit-blame-heading ((,class (:foreground ,green :background ,background-green :box 1))))
 
@@ -350,12 +355,12 @@
    `(helm-history-deleted ((,class (:foreground ,red :weight bold :background ,background-red))))
 
    ;; visible mark
-   `(visible-mark-face1 ((,class (:foreground ,red :inverse-video t))))
-   `(visible-mark-face2 ((,class (:foreground ,orange :inverse-video t))))
+   `(visible-mark-face1 ((,class (:background ,purple-dark))))
+   `(visible-mark-face2 ((,class (:background ,blue-dark))))
+
+   ;; show-paren
+   `(show-paren-match ((,class (:background ,blue-dark))))
    ))
-
-
-
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
