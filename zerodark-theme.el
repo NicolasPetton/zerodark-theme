@@ -175,6 +175,10 @@
    `(magit-diff-removed ((,class (:background ,diff-removed-background))))
    `(magit-diff-added-highlight ((,class (:background ,diff-added-background))))
    `(magit-diff-added ((,class (:background ,diff-added-background))))
+   `(magit-diff-lines-heading ((,class (:background ,blue-dark :foreground "white"))))
+   `(magit-diff-hunk-heading ((,class (:background ,background-lighter))))
+   `(magit-diff-hunk-heading-highlight ((,class (:background ,blue-dark))))
+   `(magit-diff-hunk-heading ((,class (:background ,background-lighter))))
 
    `(magit-section-highlight ((,class (:background ,background-darker))))
    `(magit-section-heading ((,class (:foreground ,grey :weight bold))))
