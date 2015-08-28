@@ -169,7 +169,8 @@
 
    ;; magit
    `(magit-diff-context-highlight ((,class (:background ,background-darker))))
-   `(magit-diff-file-heading ((,class (:weight bold :foreground ,blue :background ,background-blue))))
+   `(magit-diff-file-heading ((,class (:weight bold :foreground ,blue))))
+   `(magit-diff-file-heading-highlight ((,class (:weight bold :foreground ,blue :background ,background-blue))))
    `(magit-diff-removed-highlight ((,class (:background ,diff-removed-background))))
    `(magit-diff-removed ((,class (:background ,diff-removed-background))))
    `(magit-diff-added-highlight ((,class (:background ,diff-added-background))))
