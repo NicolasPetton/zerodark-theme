@@ -138,13 +138,13 @@
                                               :inverse-video unspecified))))
    `(whitespace-trailing ((,class (:background ,red :foreground ,background :weight bold
                                                :inverse-video nil))))
-   `(whitespace-line ((,class (:background unspecified :foreground unspecified
+   `(whitespace-line ((,class (:background unspecified :foreground ,red
                                            :inverse-video unspecified))))
    `(whitespace-space-before-tab ((,class (:inherit whitespace-space))))
    `(whitespace-space-after-tab ((,class (:inherit whitespace-space))))
    `(whitespace-indentation ((,class (:background unspecified :foreground ,highlight
                                                   :inverse-video unspecified))))
-   `(whitespace-empty ((,class (:background unspecified :foreground ,highlight
+   `(whitespace-empty ((,class (:background ,orange :foreground ,highlight
                                             :inverse-video unspecified))))
 
    ;; link faces
