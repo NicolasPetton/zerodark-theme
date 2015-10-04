@@ -370,6 +370,18 @@
 
    ;; clojure
    `(clojure-keyword-face ((,class (:inherit font-lock-builtin-face))))
+
+   ;; ledger
+   `(ledger-font-report-clickable-face ((,class (:foreground ,purple))))
+   `(ledger-font-posting-amount-face ((,class (:foreground ,purple))))
+   `(ledger-font-posting-date-face ((,class (:foreground ,red :background))))
+   `(ledger-font-payee-uncleared-face ((,class (:foreground ,red :weight bold))))
+   `(ledger-font-posting-account-face ((,class (:foreground ,blue))))
+   `(ledger-font-posting-account-pending-face ((,class (:foreground ,red))))
+   `(ledger-font-xact-highlight-face ((,class (:background ,background-darker))))
+   `(ledger-font-other-face ((,class (:inherit ,font-lock-comment-face))))
+
+
    ))
 
 ;;;###autoload
