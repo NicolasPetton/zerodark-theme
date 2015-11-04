@@ -5,7 +5,7 @@
 ;; Author: Nicolas Petton <nicolas@petton.fr>
 ;; Keywords: themes
 ;; URL: https://github.com/NicolasPetton/zerodark-theme
-;; Version: 0.1
+;; Version: 1.0
 
 ;; This file is NOT part of GNU Emacs
 
@@ -325,6 +325,12 @@
    `(ediff-odd-diff-A ((,class (:background ,highlight :foreground unspecified))))
    `(ediff-odd-diff-B ((,class (:background ,highlight :foreground unspecified))))
    `(ediff-odd-diff-C ((,class (:background ,highlight :foreground unspecified))))
+
+   ;; ivy
+   `(ivy-minibuffer-match-face-1 ((,class (:foreground ,orange :weight bold :background ,background-orange))))
+   `(ivy-minibuffer-match-face-2 ((,class (:foreground ,purple :background ,background-purple :weight bold))))
+   `(ivy-minibuffer-match-face-3 ((,class (:foreground ,orange :weight bold :background ,background-orange))))
+   `(ivy-minibuffer-match-face-4 ((,class (:foreground ,purple :background ,background-purple :weight bold))))
 
    ;; helm
    `(helm-candidate-number ((,class (:weight bold))))
