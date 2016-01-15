@@ -332,6 +332,7 @@
    `(ivy-minibuffer-match-face-2 ((,class (:foreground ,green))))
    `(ivy-minibuffer-match-face-3 ((,class (:foreground ,orange))))
    `(ivy-minibuffer-match-face-4 ((,class (:foreground ,green))))
+   `(ivy-match-required-face ((,class (:foreground ,red :background ,background-red :weight bold))))
    `(ivy-remote ((,class (:foreground ,blue))))
 
    ;; helm
@@ -390,8 +391,28 @@
    `(ledger-font-other-face ((,class (:inherit ,font-lock-comment-face))))
    `(ledger-font-periodic-xact-face ((,class (:foreground ,green))))
 
+   `(term-color-black ((,class (:foreground ,default :background ,background-darker))))
+   `(term-color-red ((,class (:foreground ,red :background ,background-red))))
+   `(term-color-green ((,class (:foreground ,green :background ,background-green))))
+   `(term-color-yellow ((,class (:foreground ,orange :background ,background-orange))))
+   `(term-color-blue ((,class (:foreground ,blue :background ,background-blue))))
+   `(term-color-magenta ((,class (:foreground ,purple :background ,background-purple))))
+   `(term-color-cyan ((,class (:foreground ,blue-dark))))
+   `(term-color-white ((,class (:foreground ,grey))))
+   `(term ((,class (:foreground ,default :background ,background))))
+   '(term-default-fg-color ((,class (:inherit term-color-white))))
+   '(term-default-bg-color ((,class (:inherit term-color-black)))))
 
-   ))
+  (custom-theme-set-variables
+   'zerodark
+   `(ansi-color-names-vector [,background
+                              ,red
+                              ,green
+                              ,orange
+                              ,blue
+                              ,purple
+                              ,blue-dark
+                              ,default])))
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
