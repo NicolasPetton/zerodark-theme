@@ -391,6 +391,10 @@
    `(ledger-font-other-face ((,class (:inherit ,font-lock-comment-face))))
    `(ledger-font-periodic-xact-face ((,class (:foreground ,green))))
 
+   `(diff-hl-change ((,class (:foreground ,purple :background ,background-purple))))
+   `(diff-hl-delete ((,class (:foreground ,red :background ,background-red))))
+   `(diff-hl-insert ((,class (:foreground ,green :background ,background-green))))
+
    `(term-color-black ((,class (:foreground ,default :background ,background-darker))))
    `(term-color-red ((,class (:foreground ,red :background ,background-red))))
    `(term-color-green ((,class (:foreground ,green :background ,background-green))))
