@@ -252,7 +252,7 @@
    ;; FIC
    `(font-lock-fic-face ((,class (:foreground ,background :background ,red :weight bold))))
 
-   ;; org-mode todo WORK IN PROGRESS
+   ;; org-mode todo
    `(org-hide ((,class (:foreground ,background))))
    `(org-todo ((,class (:foreground ,red :background ,background-red :weight bold))))
    `(org-done ((,class (:foreground ,blue :background ,background-blue :weight bold))))
@@ -271,10 +271,15 @@
    `(org-column-title ((,class (:foreground unspecified :background unspecified))))
    `(org-agenda-date ((,class (:foreground ,purple :weight bold))))
    `(org-agenda-date-today ((,class (:foreground ,blue :weight bold :background ,background-blue :box 1))))
-   `(org-agenda-structure ((,class (:foreground ,orange :weight bold))))
+   `(org-agenda-structure ((,class (:foreground ,blue :weight bold))))
    `(org-scheduled-today ((,class (:foreground ,default :weight bold))))
    `(org-agenda-done ((,class (:foreground ,comment))))
    `(org-time-grid ((,class (:foreground ,comment))))
+
+   ;; org blocks
+   `(org-block-begin-line ((,class (:background ,background-blue :foreground ,blue :height 0.8))))
+   `(org-block-background ((,class (:background ,background))))
+   `(org-block-end-line ((,class (:background ,background-blue :foreground ,blue :height 0.8))))
 
    ;; Gnus faces -- from wombat, feel free to improve :)
    `(gnus-group-news-1 ((,class (:weight bold :foreground "#95e454"))))
