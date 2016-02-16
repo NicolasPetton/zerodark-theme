@@ -277,9 +277,8 @@
    `(org-time-grid ((,class (:foreground ,comment))))
 
    ;; org blocks
-   `(org-block-begin-line ((,class (:background ,background-blue :foreground ,blue :height 0.8))))
-   `(org-block-background ((,class (:background ,background))))
-   `(org-block-end-line ((,class (:background ,background-blue :foreground ,blue :height 0.8))))
+   `(org-block-begin-line ((,class (:background ,background-green :foreground ,green-light :height 0.9))))
+   `(org-block-end-line ((,class (:background ,background-green :foreground ,green-light :height 0.9))))
 
    ;; Gnus faces -- from wombat, feel free to improve :)
    `(gnus-group-news-1 ((,class (:weight bold :foreground "#95e454"))))
