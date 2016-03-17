@@ -408,8 +408,14 @@
    `(term-color-cyan ((,class (:foreground ,blue-dark))))
    `(term-color-white ((,class (:foreground ,grey))))
    `(term ((,class (:foreground ,default :background ,background))))
-   '(term-default-fg-color ((,class (:inherit term-color-white))))
-   '(term-default-bg-color ((,class (:inherit term-color-black)))))
+   `(term-default-fg-color ((,class (:inherit term-color-white))))
+   `(term-default-bg-color ((,class (:inherit term-color-black))))
+
+   `(avy-lead-face ((,class :foreground ,red :background ,background-red)))
+   `(avy-lead-face-0 ((,class :foreground ,purple :background ,background-purple)))
+   `(avy-lead-face-1 ((,class :foreground ,blue :background ,background-blue)))
+   `(avy-lead-face-2 ((,class :foreground ,green :background ,background-green)))
+   )
 
   (custom-theme-set-variables
    'zerodark
