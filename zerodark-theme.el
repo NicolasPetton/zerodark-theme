@@ -415,6 +415,13 @@
    `(avy-lead-face-0 ((,class :foreground ,purple :background ,background-purple)))
    `(avy-lead-face-1 ((,class :foreground ,blue :background ,background-blue)))
    `(avy-lead-face-2 ((,class :foreground ,green :background ,background-green)))
+
+   `(erc-nick-default-face ((,class :foreground ,blue :background ,background-blue :weight bold)))
+   `(erc-current-nick-face ((,class :foreground ,red :weight bold :background ,background-red)))
+   `(erc-notice-face ((,class :foreground ,comment)))
+   `(erc-input-face ((,class :foreground ,default :weight bold)))
+   `(erc-prompt-face ((,class :foreground ,purple :background ,background-purple :weight bold :box 1)))
+   `(erc-timestamp-face ((,class :foreground ,purple :weight bold)))
    )
 
   (custom-theme-set-variables
