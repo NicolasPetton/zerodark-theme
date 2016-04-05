@@ -418,6 +418,7 @@
 
    `(erc-nick-default-face ((,class :foreground ,blue :background ,background-blue :weight bold)))
    `(erc-current-nick-face ((,class :foreground ,red :weight bold :background ,background-red)))
+   `(erc-my-nick-face ((,class :foreground ,red :weight bold :background ,background-red)))
    `(erc-notice-face ((,class :foreground ,comment)))
    `(erc-input-face ((,class :foreground ,default :weight bold)))
    `(erc-prompt-face ((,class :foreground ,purple :background ,background-purple :weight bold :box 1)))
