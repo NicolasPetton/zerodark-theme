@@ -230,7 +230,7 @@
    `(company-preview-search ((,class (:background ,blue :foreground ,default))))
    `(company-tooltip ((,class (:background ,background-darker :foreground ,default))))
    `(company-scrollbar-bg ((,class (:background ,background-darker))))
-   `(company-scrollbar-fg ((,class (:background ,default))))
+   `(company-scrollbar-fg ((,class (:background ,background-blue))))
    `(company-tooltip-common ((,class (:foreground ,purple :weight bold :background ,background-darker))))
    `(company-tooltip-annotation ((,class (:foreground ,blue :weight bold :background ,background-blue))))
    `(company-tooltip-common-selection ((,class (:foreground ,purple :background ,background-lighter :weight bold))))
