@@ -199,6 +199,8 @@
    `(git-commit-summary ((,class (:weight bold))))
 
    `(magit-tag ((,class (:foreground ,purple :weight bold :box 1 :background "#202020"))))
+   `(magit-sequence-part ((,class (:foreground ,orange :weight bold))))
+   `(magit-sequence-head ((,class (:foreground ,green :weight bold))))
 
    ;; Message faces
    `(message-header-name ((,class (:foreground ,blue :weight bold))))
