@@ -218,6 +218,7 @@
 
    ;; notmuch
    `(notmuch-message-summary-face ((,class (:background ,highlight :box (:line-width 2 :color ,background)))))
+   `(notmuch-search-unread-face ((,class (:foreground ,default :weight bold))))
    `(notmuch-crypto-part-header ((,class (:foreground ,blue))))
    `(notmuch-crypto-decryption ((,class (:foreground ,purple))))
    `(notmuch-crypto-signature-unknown ((,class (:foreground ,red))))
