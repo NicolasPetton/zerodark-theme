@@ -239,7 +239,7 @@
    `(notmuch-crypto-signature-good ((,class (:background ,blue :foreground ,background :weight bold))))
    `(notmuch-crypto-signature-good-key ((,class (:background ,blue :foreground ,background :weight bold))))
    `(notmuch-crypto-signature-bad ((,class (:background ,red :foreground ,background :weight bold))))
-   `(notmuch-tag-face ((,class (:foreground ,green :background ,background-green :weight bold))))
+   `(notmuch-tag-face ((,class (:foreground ,green :weight bold))))
 
    ;; company
    `(company-preview ((,class (:background ,background-darker :foreground ,default))))
