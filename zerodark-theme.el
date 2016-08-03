@@ -153,8 +153,16 @@
    `(link-visited ((,class (:foreground ,blue :underline t))))
 
    ;; widget faces
-   `(widget-field ((,class (:background ,highlight))))
+   `(widget-field ((,class (:background ,highlight :box (:line-width 1 :color ,comment)))))
    `(widget-button ((,class (:inherit link))))
+
+   ;; custom
+   `(custom-button ((,class (:background ,background-lighter :box (:line-width 2 :style released-button)))))
+   `(custom-button-mouse ((,class (:background ,highlight :box (:line-width 2 :style released-button)))))
+   `(custom-button-pressed ((,class (:background ,highlight :box (:line-width 2 :style pressed-button)))))
+   `(custom-group-tag ((,class (:foreground ,purple :weight bold :height 1.4))))
+   `(custom-variable-tag ((,class (:foreground ,purple :weight bold))))
+   `(custom-state ((,class (:foreground ,green))))
 
    ;; compilation
    `(compilation-info ((,class (:foreground ,purple :weight bold))))
