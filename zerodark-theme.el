@@ -154,6 +154,7 @@
 
    ;; widget faces
    `(widget-field ((,class (:background ,highlight))))
+   `(widget-button ((,class (:inherit link))))
 
    ;; compilation
    `(compilation-info ((,class (:foreground ,purple :weight bold))))
