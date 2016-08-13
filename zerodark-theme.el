@@ -97,10 +97,10 @@
    ;; Mode line faces
    `(mode-line ((,class (:background ,background-blue :height 0.9 :foreground ,blue
                                      :box ,(when zerodark-use-paddings-in-mode-line
-                                              (list :line-width 4 :color background-blue))))))
+                                             (list :line-width 4 :color background-blue))))))
    `(mode-line-inactive ((,class (:background ,background-darker :height 0.9 :foreground ,default
                                               :box ,(when zerodark-use-paddings-in-mode-line
-                                                       (list :line-width 4 :color background-darker))))))
+                                                      (list :line-width 4 :color background-darker))))))
    `(header-line ((,class (:inherit mode-line-inactive))))
 
    ;; powerline
@@ -444,6 +444,12 @@
 
    `(hydra-face-red ((,class :foreground ,red :weight bold)))
    `(hydra-face-blue ((,class :foreground ,blue :weight bold)))
+
+   ;; elfeed
+   `(elfeed-search-date-face ((,class (:foreground ,blue))))
+   `(elfeed-search-feed-face ((,class (:foreground ,blue))))
+   `(elfeed-search-tag-face ((,class (:foreground ,green))))
+   `(elfeed-search-title-face ((,class (:foreground ,purple))))
    )
 
   (custom-theme-set-variables
