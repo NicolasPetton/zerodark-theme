@@ -256,6 +256,7 @@
 
    ;; web-mode
    `(web-mode-html-tag-face ((,class (:foreground ,purple :weight bold))))
+   `(web-mode-symbol-face ((,class (:foreground ,red :weight bold))))
 
    ;; js2-mode
    `(js2-function-param ((,class (:foreground ,blue))))
