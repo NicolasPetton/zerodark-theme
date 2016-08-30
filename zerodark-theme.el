@@ -413,7 +413,7 @@
    `(ledger-font-posting-account-pending-face ((,class (:foreground ,red))))
    `(ledger-font-xact-highlight-face ((,class (:background ,background-darker))))
    `(ledger-font-other-face ((,class (:inherit ,font-lock-comment-face))))
-   `(ledger-font-periodic-xact-face ((,class (:foreground ,green))))
+   `(ledger-font-periodic-xact-face ((,class (:foreground ,orange))))
 
    `(diff-hl-change ((,class (:foreground ,purple :background ,background-purple))))
    `(diff-hl-delete ((,class (:foreground ,red :background ,background-red))))
