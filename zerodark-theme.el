@@ -408,6 +408,7 @@
    `(ledger-font-posting-amount-face ((,class (:foreground ,purple))))
    `(ledger-font-posting-date-face ((,class (:foreground ,blue :background ,background-blue :box 1))))
    `(ledger-font-payee-uncleared-face ((,class (:foreground ,default :weight bold))))
+   `(ledger-font-payee-cleared-face ((,class (:foreground ,green :weight bold))))
    `(ledger-font-posting-account-face ((,class (:foreground ,default))))
    `(ledger-font-posting-account-pending-face ((,class (:foreground ,red))))
    `(ledger-font-xact-highlight-face ((,class (:background ,background-darker))))
