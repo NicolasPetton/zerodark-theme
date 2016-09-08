@@ -190,6 +190,8 @@
    `(magit-diff-hunk-heading-highlight ((,class (:background ,blue-dark))))
    `(magit-diff-hunk-heading ((,class (:background ,background-lighter))))
 
+   `(magit-process-ok ((,class (:foreground ,green :weight bold))))
+
    `(magit-section-highlight ((,class (:background ,background-darker))))
    `(magit-section-heading ((,class (:foreground ,grey :weight bold))))
    `(magit-branch-current ((,class (:foreground ,blue :box 1))))
