@@ -454,6 +454,9 @@
    `(elfeed-search-feed-face ((,class (:foreground ,blue))))
    `(elfeed-search-tag-face ((,class (:foreground ,green))))
    `(elfeed-search-title-face ((,class (:foreground ,purple))))
+
+   ;; wgrep
+   `(wgrep-face ((,class (:foreground ,orange :weight bold))))
    )
 
   (custom-theme-set-variables
