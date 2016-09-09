@@ -456,7 +456,9 @@
    `(elfeed-search-title-face ((,class (:foreground ,purple))))
 
    ;; wgrep
-   `(wgrep-face ((,class (:foreground ,orange :weight bold))))
+   `(wgrep-face ((,class (:foreground ,orange))))
+   `(wgrep-reject-face ((,class (:foreground ,red :weight bold :background ,background-red))))
+   `(wgrep-done-face ((,class (:foreground ,blue :weight bold))))
    )
 
   (custom-theme-set-variables
