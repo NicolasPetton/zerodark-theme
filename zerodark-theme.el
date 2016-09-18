@@ -332,8 +332,10 @@
    ;; diff
    `(diff-removed ((,class (:foreground ,default :background ,diff-removed-background))))
    `(diff-added ((,class (:foreground ,default :background ,diff-added-background))))
-   `(diff-hunk-header ((,class (:background ,highlight :weight bold :foreground ,default))))
-   `(diff-file-header ((,class (:background ,highlight :weight bold :foreground ,default))))
+   `(diff-hunk-header ((,class (:background ,background-blue :weight bold :foreground ,blue))))
+   `(diff-file-header ((,class (:weight bold))))
+   `(diff-header ((,class (:background ,background :foreground ,blue))))
+   `(diff-context ((,class (:foreground ,default))))
    `(diff-refine-added ((,class (:foreground ,grey :background ,diff-added-refined-background))))
    `(diff-refine-removed ((,class (:background ,diff-removed-refined-background :foreground ,grey))))
 
