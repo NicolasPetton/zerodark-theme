@@ -461,6 +461,12 @@
    `(wgrep-face ((,class (:foreground ,orange))))
    `(wgrep-reject-face ((,class (:foreground ,red :weight bold :background ,background-red))))
    `(wgrep-done-face ((,class (:foreground ,blue :weight bold))))
+
+   ;; AucTeX
+   `(font-latex-math-face ((,class :foreground ,green-light)))
+   `(font-latex-sectioning-5-face ((,class :foreground ,blue)))
+   `(font-latex-string-face ((,class :inherit font-lock-string-face)))
+   `(font-latex-warning-face ((,class :inherit warning)))
    )
 
   (custom-theme-set-variables
