@@ -50,6 +50,8 @@
       (light (if (true-color-p) "#ccd4e3" "#d7d7d7"))
       (background (if (true-color-p) "#282c34" "#333333"))
       (background-darker (if (true-color-p) "#21252b" "#222222"))
+      (mode-line-inactive (if "#1c2129" "#222222"))
+      (mode-line-active (if (true-color-p) "#0f60a4" "#005f87"))
       (background-lighter (if (true-color-p) "#3a3f4b" "#5f5f5f"))
       (background-red (if (true-color-p) "#4c3840" "#5f5f5f"))
       (background-purple (if (true-color-p) "#48384c" "#5f5f5f"))
@@ -67,7 +69,6 @@
       (purple (if (true-color-p) "#c678dd" "#d787d7"))
       (purple-dark (if (true-color-p) "#64446d" "#5f5f5f"))
       (blue (if (true-color-p) "#61afef" "#5fafff"))
-      (blue-mode-line (if (true-color-p) "#0f60a4" "#005f87"))
       (blue-dark (if (true-color-p) "#1f5582" "#005f87"))
       (green (if (true-color-p) "#98be65" "#87af5f"))
       (green-light (if (true-color-p) "#9eac8c" "#afaf87"))
@@ -108,7 +109,7 @@
 
    ;; Mode line faces
    `(mode-line ((,class (:background ,(if zerodark-use-high-contrast-in-mode-line
-                                          blue-mode-line
+                                          mode-line-active
                                         background-blue)
                                      :height 0.9
                                      :foreground ,(if zerodark-use-high-contrast-in-mode-line
@@ -118,11 +119,18 @@
                                              (list :line-width 4
                                                    :color
                                                    (if zerodark-use-high-contrast-in-mode-line
-                                                       blue-mode-line
+                                                       mode-line-active
                                                      background-blue)))))))
-   `(mode-line-inactive ((,class (:background ,background-darker :height 0.9 :foreground ,default
+   `(mode-line-inactive ((,class (:background ,(if zerodark-use-high-contrast-in-mode-line
+                                                   mode-line-inactive
+                                                 background-darker)
+                                              :height 0.9
+                                              :foreground ,default
                                               :box ,(when zerodark-use-paddings-in-mode-line
-                                                      (list :line-width 4 :color background-darker))))))
+                                                      (list :line-width 4
+                                                            :color (if zerodark-use-high-contrast-in-mode-line
+                                                                       mode-line-inactive
+                                                                     background-darker)))))))
    `(header-line ((,class (:inherit mode-line-inactive))))
 
    ;; powerline
