@@ -294,6 +294,7 @@
 
    ;; js2-mode
    `(js2-function-param ((,class (:foreground ,blue))))
+   `(js2-error ((,class (:foreground ,red :weight bold))))
 
    ;; flycheck
    `(flycheck-fringe-error ((,class (:foreground ,red :background ,background-red :weight bold :inverse-video t))))
