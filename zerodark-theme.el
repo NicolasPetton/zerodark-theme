@@ -208,6 +208,8 @@
    `(magit-reflog-amend ((,class (:background ,background-blue :foreground ,blue :weight bold))))
    `(magit-reflog-rebase ((,class (:background ,background-blue :foreground ,blue :weight bold))))
    `(magit-reflog-commit ((,class (:background ,background-green :foreground ,green :weight bold))))
+   `(magit-reflog-checkout ((,class (:background ,background-orange :foreground ,orange :weight bold))))
+   `(magit-reflog-cherry-pick ((,class (:background ,background-purple :foreground ,purple :weight bold))))
 
    `(magit-bisect-bad ((,class (:background ,background-red :foreground ,red :box 1))))
    `(magit-bisect-good ((,class (:background ,background-blue :foreground ,blue :box 1))))
