@@ -12,6 +12,19 @@ A dark theme for [Emacs](https://www.gnu.org/software/emacs/), inspired from [Ni
 ### Magit
 
 ![Screenshot Magit](screenshot-magit.png)
+![Screenshot Diff](screenshot-diff.png)
+
+### Emails (notmuch)
+
+![Screenshot Notmuch](screenshot-notmuch-1.png)
+![Screenshot Notmuch](screenshot-notmuch-2.png)
+
+### High contrast mode-line
+
+The mode-line can use more contrasted colors, with
+`zerodark-use-high-contrast-in-mode-line`:
+
+![Screenshot mode-line](screenshot-high-contrast-mode-line.png)
 
 ## Installation (with MELPA)
 
