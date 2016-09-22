@@ -34,6 +34,11 @@
   :type 'boolean
   :group 'zerodark)
 
+(defcustom zerodark-use-high-contrast-in-mode-line t
+  "When non-nil, use more contrast for the active mode-line."
+  :type 'boolean
+  :group 'zerodark)
+
 (defun true-color-p ()
   (or
    (display-graphic-p)
@@ -62,6 +67,7 @@
       (purple (if (true-color-p) "#c678dd" "#d787d7"))
       (purple-dark (if (true-color-p) "#64446d" "#5f5f5f"))
       (blue (if (true-color-p) "#61afef" "#5fafff"))
+      (blue-mode-line (if (true-color-p) "#0f60a4" "#005f87"))
       (blue-dark (if (true-color-p) "#1f5582" "#005f87"))
       (green (if (true-color-p) "#98be65" "#87af5f"))
       (green-light (if (true-color-p) "#9eac8c" "#afaf87"))
@@ -101,9 +107,19 @@
    `(font-lock-warning-face ((,class (:foreground ,red :weight bold :background ,background-red))))
 
    ;; Mode line faces
-   `(mode-line ((,class (:background ,background-blue :height 0.9 :foreground ,blue
+   `(mode-line ((,class (:background ,(if zerodark-use-high-contrast-in-mode-line
+                                          blue-mode-line
+                                        background-blue)
+                                     :height 0.9
+                                     :foreground ,(if zerodark-use-high-contrast-in-mode-line
+                                                      light
+                                                    blue)
                                      :box ,(when zerodark-use-paddings-in-mode-line
-                                             (list :line-width 4 :color background-blue))))))
+                                             (list :line-width 4
+                                                   :color
+                                                   (if zerodark-use-high-contrast-in-mode-line
+                                                       blue-mode-line
+                                                     background-blue)))))))
    `(mode-line-inactive ((,class (:background ,background-darker :height 0.9 :foreground ,default
                                               :box ,(when zerodark-use-paddings-in-mode-line
                                                       (list :line-width 4 :color background-darker))))))
