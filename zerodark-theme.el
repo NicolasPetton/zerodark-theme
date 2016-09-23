@@ -51,7 +51,7 @@
       (background (if (true-color-p) "#282c34" "#333333"))
       (background-darker (if (true-color-p) "#21252b" "#222222"))
       (mode-line-inactive (if "#1c2129" "#222222"))
-      (mode-line-active (if (true-color-p) "#7e3f8e" "#875f87"))
+      (mode-line-active (if (true-color-p) "#6f337e" "#875f87"))
       (background-lighter (if (true-color-p) "#3a3f4b" "#5f5f5f"))
       (background-red (if (true-color-p) "#4c3840" "#5f5f5f"))
       (background-purple (if (true-color-p) "#48384c" "#5f5f5f"))
