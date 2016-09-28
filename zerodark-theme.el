@@ -513,6 +513,8 @@
    `(jabber-chat-prompt-local ((,class :foreground ,purple :background ,background-purple :weight bold)))
    `(jabber-chat-prompt-foreign ((,class :foreground ,green :background ,background-green :weight bold)))
    `(jabber-activity-personal-face ((,class :foreground ,red :background ,background-red :weight bold)))
+   `(jabber-roster-user-away ((,class :foreground ,orange)))
+   `(jabber-roster-user-xa ((,class :foreground ,orange)))
    )
 
   (custom-theme-set-variables
