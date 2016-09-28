@@ -505,6 +505,14 @@
 
    `(anzu-replace-highlight ((,class :background ,(if (true-color-p) "#981b1b" "#870000"))))
    `(anzu-replace-to ((,class :background ,(if (true-color-p) "#198754" "#00875f"))))
+
+   ;; jabber.el
+   `(jabber-roster-user-online ((,class :foreground ,blue :weight bold)))
+   `(jabber-roster-user-error ((,class :foreground ,red :background ,background-red :weight bold)))
+   `(jabber-rare-time-face ((,class :foreground ,comment)))
+   `(jabber-chat-prompt-local ((,class :foreground ,purple :background ,background-purple :weight bold)))
+   `(jabber-chat-prompt-foreign ((,class :foreground ,green :background ,background-green :weight bold)))
+   `(jabber-activity-personal-face ((,class :foreground ,red :background ,background-red :weight bold)))
    )
 
   (custom-theme-set-variables
