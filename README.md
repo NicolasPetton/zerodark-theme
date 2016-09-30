@@ -26,6 +26,14 @@ The mode-line can use more contrasted colors, with
 
 ![Screenshot mode-line](screenshot-high-contrast-mode-line.png)
 
+### Mode-line format (optional)
+
+When `zerodark-use-zerodark-mode-line-format` is `non-nil` (the default), a
+custom mode-line-format is used:
+
+![Screenshot mode-line-format](screenshot-mode-line-format.png)
+
+
 ## Installation (with MELPA)
 
     M-x package-install RET zerodark-theme
