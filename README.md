@@ -33,6 +33,17 @@ custom mode-line-format is used:
 
 ![Screenshot mode-line-format](screenshot-mode-line-format.png)
 
+### Note
+
+The custom mode line provided with `zerodark-theme` uses
+the [all-the-icons](https://github.com/domtronn/all-the-icons.el) package. The
+package itself is installed along with `zerodark-theme`.
+
+However, it is necessary to install the fonts in the `fonts` directory included
+in `all-the-icons` repository as explained in its README:
+
+> in order for the icons to work you will need to install the Resource Fonts
+> included in this package, they are available in the fonts directory.
 
 ## Installation (with MELPA)
 
