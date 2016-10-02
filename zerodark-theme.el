@@ -126,15 +126,14 @@
                                         (:eval (s-truncate 25 vc-mode)))))
 
 (defvar zerodark-modeline-vc-alt '(vc-mode ("   "
-                                            (:eval (let ((face (zerodark-git-face)))
-                                                     (all-the-icons-faicon "code-fork"
-                                                                           :height 0.9
-                                                                           :v-adjust 0
-                                                                           :face (when (zerodark--active-window-p)
-                                                                                   face))
-                                                     (propertize (s-truncate 25 vc-mode)
-                                                                 'face (when (zerodark--active-window-p)
-                                                                         face)))))))
+                                            (:eval (all-the-icons-faicon "code-fork"
+                                                                         :height 0.9
+                                                                         :v-adjust 0
+                                                                         :face (when (zerodark--active-window-p)
+                                                                                 (zerodark-git-face))))
+                                            (:eval (propertize (s-truncate 25 vc-mode)
+                                                               'face (when (zerodark--active-window-p)
+                                                                       (zerodark-git-face)))))))
 
 (defun true-color-p ()
   (or
