@@ -32,7 +32,7 @@
 (require 'powerline)
 
 (defmacro cached-for (secs &rest body)
-  "Cache the result of the evaluation of BODY for SECS."
+  "Cache for SECS the result of the evaluation of BODY."
   (declare (debug t))
   (let ((cache (make-symbol "cache"))
         (last-run (make-symbol "last-run")))
@@ -68,17 +68,17 @@
   '((t :foreground "#61afef"))
   "Face for vc status in the mode-line.")
 
-(defface zerodark-git-uptodate-face
+(defface zerodark-ok-face
   '((t :foreground "#61afef"))
-  "Face for vc status in the mode-line.")
+  "Face for ok status in the mode-line.")
 
-(defface zerodark-git-unpushed-face
+(defface zerodark-warning-face
   '((t :foreground "#da8548"))
-  "Face for vc status in the mode-line.")
+  "Face for warning status in the mode-line.")
 
-(defface zerodark-git-uncommitted-face
+(defface zerodark-error-face
   '((t :foreground "#ff6c6b"))
-  "Face for vc status in the mode-line.")
+  "Face for error status in the mode-line.")
 
 (defcustom zerodark-use-high-contrast-in-mode-line t
   "When non-nil, use more contrast for the active mode-line."
@@ -87,6 +87,9 @@
 
 (defvar zerodark-modeline-position ":%l:%c %p "
   "Mode line construct for displaying the position in the buffer.")
+
+(defvar zerodark-modeline-position-alt (propertize ":%l:%c %p " 'face 'mode-line-inactive)
+  "Alternate mode line construct for displaying the position in the buffer.")
 
 (defvar zerodark-modeline-buffer-identification '(:eval (propertize "%b" 'face 'bold))
   "Mode line construct for displaying the position in the buffer.")
@@ -135,7 +138,34 @@
                                                                'face (when (zerodark--active-window-p)
                                                                        (zerodark-git-face)))))))
 
+(defun zerodark-modeline-flycheck-status ()
+  "Return the status of flycheck to be displayed in the mode-line."
+  (when flycheck-mode
+    (let* ((text (pcase flycheck-last-status-change
+                   (`finished (if flycheck-current-errors
+                                  (let ((count (let-alist (flycheck-count-errors flycheck-current-errors)
+                                                 (+ (or .warning 0) (or .error 0)))))
+                                    (propertize (format "✖ %s Issue%s" count (if (eq 1 count) "" "s"))
+                                                'face 'zerodark-error-face))
+                                (propertize "✔ No Issues"
+                                            'face 'zerodark-ok-face)))
+                   (`running     (propertize "⟲ Running"
+                                             'face 'zerodark-warning-face))
+                   (`no-checker  (propertize "⚠ No Checker"
+                                             'face 'zerodark-warning-face))
+                   (`not-checked "✖ Disabled")
+                   (`errored     (propertize "⚠ Error"
+                                             'face 'zerodark-error-face))
+                   (`interrupted (propertize "⛔ Interrupted"
+                                             'face 'zerodark-error-face))
+                   (`suspicious  ""))))
+      (propertize text
+                  'help-echo "Show Flycheck Errors"
+                  'local-map (make-mode-line-mouse-map
+                              'mouse-1 #'flycheck-list-errors)))))
+
 (defun true-color-p ()
+  "Return non-nil on displays that support 256 colors."
   (or
    (display-graphic-p)
    (= (tty-display-color-cells) 16777216)))
@@ -152,10 +182,10 @@
                                              ".."
                                              (magit-get-current-branch)))))
           ;; nothing to push as well
-          'zerodark-git-uptodate-face
+          'zerodark-ok-face
         ;; nothing to commit, but some commits must be pushed
-        'zerodark-git-unpushed-face)
-    'zerodark-git-uncommitted-face))
+        'zerodark-warning-face)
+    'zerodark-error-face))
 
 (defun zerodark-git-face ()
   "Return the face to use based on the current repository status.
@@ -722,8 +752,10 @@ The result is cached for one second to avoid hiccups."
                   ,zerodark-modeline-modified-alt
                   " "
                   ,zerodark-modeline-buffer-identification
-                  ,zerodark-modeline-position
+                  ,zerodark-modeline-position-alt
                   ,zerodark-modeline-vc-alt
+                  "  "
+                  (:eval (zerodark-modeline-flycheck-status))
                   "  " mode-line-modes mode-line-misc-info mode-line-end-spaces
                   )))
 
