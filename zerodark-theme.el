@@ -5,7 +5,7 @@
 ;; Author: Nicolas Petton <nicolas@petton.fr>
 ;; Keywords: themes
 ;; URL: https://github.com/NicolasPetton/zerodark-theme
-;; Version: 2.0
+;; Version: 2.1
 ;; Package: zerodark-theme
 ;; Package-Requires: ((s "1.9.0") (all-the-icons "2.0.0"))
 
@@ -19,7 +19,10 @@
 
 ;;; Commentary:
 ;;
-;; A dark theme inspired from One Dark and Niflheim
+;; A dark theme inspired from One Dark and Niflheim.
+;;
+;; An optional mode-line format can be enabled with
+;; `zerodark-setup-modeline-format'.
 ;;
 
 ;;; Code:
@@ -41,11 +44,6 @@
 
 (defcustom zerodark-use-high-contrast-in-mode-line t
   "When non-nil, use more contrast for the active mode-line."
-  :type 'boolean
-  :group 'zerodark)
-
-(defcustom zerodark-use-zerodark-mode-line-format t
-  "When non-nil, use the zerodark mode-line format."
   :type 'boolean
   :group 'zerodark)
 
@@ -582,10 +580,6 @@
 (when (and (boundp 'custom-theme-load-path) load-file-name)
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
-
-;;;###autoload
-(when zerodark-use-zerodark-mode-line-format
-  (zerodark-setup-modeline-format))
 
 (provide-theme 'zerodark)
 

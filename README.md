@@ -28,8 +28,7 @@ The mode-line can use more contrasted colors, with
 
 ### Mode-line format (optional)
 
-When `zerodark-use-zerodark-mode-line-format` is `non-nil` (the default), a
-custom mode-line-format is used:
+Evaluate `zerodark-setup-modeline-format` to enable the custom mode-line-format:
 
 ![Screenshot mode-line-format](screenshot-mode-line-format.png)
 
