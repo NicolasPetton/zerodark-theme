@@ -146,18 +146,18 @@
                                   (let ((count (let-alist (flycheck-count-errors flycheck-current-errors)
                                                  (+ (or .warning 0) (or .error 0)))))
                                     (propertize (format "✖ %s Issue%s" count (if (eq 1 count) "" "s"))
-                                                'face 'zerodark-error-face))
+                                                'face (zerodark-face-when-active 'zerodark-error-face)))
                                 (propertize "✔ No Issues"
-                                            'face 'zerodark-ok-face)))
+                                            'face (zerodark-face-when-active 'zerodark-ok-face))))
                    (`running     (propertize "⟲ Running"
-                                             'face 'zerodark-warning-face))
+                                             'face (zerodark-face-when-active 'zerodark-warning-face)))
                    (`no-checker  (propertize "⚠ No Checker"
-                                             'face 'zerodark-warning-face))
+                                             'face (zerodark-face-when-active 'zerodark-warning-face)))
                    (`not-checked "✖ Disabled")
                    (`errored     (propertize "⚠ Error"
-                                             'face 'zerodark-error-face))
+                                             'face (zerodark-face-when-active 'zerodark-error-face)))
                    (`interrupted (propertize "⛔ Interrupted"
-                                             'face 'zerodark-error-face))
+                                             'face (zerodark-face-when-active 'zerodark-error-face)))
                    (`suspicious  ""))))
       (propertize text
                   'help-echo "Show Flycheck Errors"
@@ -698,6 +698,11 @@ The result is cached for one second to avoid hiccups."
                   ,zerodark-modeline-vc
                   "  " mode-line-modes mode-line-misc-info mode-line-end-spaces
                   )))
+
+(defun zerodark-face-when-active (face)
+  "Return FACE if the window is active."
+  (when (zerodark--active-window-p)
+      face))
 
 ;; So the mode-line can keep track of "the current window"
 (defvar zerodark-selected-window nil
