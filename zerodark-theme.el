@@ -1,4 +1,4 @@
-;;; zerodark-theme.el --- A dark, medium contrast theme for Emacs
+;;; zerodark-theme.el --- A dark, medium contrast theme for Emacs -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2015-2016  Nicolas Petton
 
@@ -30,6 +30,20 @@
 (require 's)
 (require 'all-the-icons)
 (require 'powerline)
+
+(defmacro cached-for (secs &rest body)
+  "Cache the result of the evaluation of BODY for SECS."
+  (declare (debug t))
+  (let ((cache (make-symbol "cache"))
+        (last-run (make-symbol "last-run")))
+    `(let (,cache ,last-run)
+       (lambda ()
+         (when (or (null ,last-run)
+                   (> (- (time-to-seconds (current-time)) ,last-run)
+                      ,secs))
+           (setf ,cache (progn ,@body))
+           (setf ,last-run (time-to-seconds (current-time))))
+         ,cache))))
 
 (deftheme zerodark
   "A dark medium contrast theme")
@@ -127,30 +141,28 @@
    (display-graphic-p)
    (= (tty-display-color-cells) 16777216)))
 
-(defvar zerodark--git-face-cached nil)
-(defvar zerodark--git-face-last-run nil)
-(defvar zerodark--git-face-cache-seconds 1)
+(defvar zerodark--git-face-cached (cached-for 1 (zerodark--git-face-intern)))
+
+(defun zerodark--git-face-intern ()
+  "Return the face to use based on the current repository status."
+  (if (magit-git-success "diff" "--quiet")
+      ;; nothing to commit because nothing changed
+      (if (zerop (length (magit-git-string
+                          "rev-list" (concat "origin/"
+                                             (magit-get-current-branch)
+                                             ".."
+                                             (magit-get-current-branch)))))
+          ;; nothing to push as well
+          'zerodark-git-uptodate-face
+        ;; nothing to commit, but some commits must be pushed
+        'zerodark-git-unpushed-face)
+    'zerodark-git-uncommitted-face))
+
 (defun zerodark-git-face ()
   "Return the face to use based on the current repository status.
-
 The result is cached for one second to avoid hiccups."
-  (when (or (null zerodark--git-face-cached)
-            (> (- (time-to-seconds (current-time)) zerodark--git-face-last-run)
-               zerodark--git-face-cache-seconds))
-    (setq zerodark--git-face-last-run (time-to-seconds (current-time)))
-    (setq zerodark--git-face-cached (if (magit-git-success "diff" "--quiet")
-                                        ;; nothing to commit because nothing changed
-                                        (if (zerop (length (magit-git-string
-                                                            "rev-list" (concat "origin/"
-                                                                               (magit-get-current-branch)
-                                                                               ".."
-                                                                               (magit-get-current-branch)))))
-                                            ;; nothing to push as well
-                                            'zerodark-git-uptodate-face
-                                          ;; nothing to commit, but some commits must be pushed
-                                          'zerodark-git-unpushed-face)
-                                      'zerodark-git-uncommitted-face)))
-  zerodark--git-face-cached)
+  (funcall zerodark--git-face-cached))
+
 
 (let ((class '((class color) (min-colors 89)))
       (default (if (true-color-p) "#abb2bf" "#afafaf"))
