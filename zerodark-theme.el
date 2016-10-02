@@ -234,6 +234,8 @@ The result is cached for one second to avoid hiccups."
 
    ;; Highlighting faces
    `(fringe ((,class (:background ,background))))
+   `(border ((,class (:foreground ,mode-line-inactive))))
+   `(vertical-border ((,class (:foreground ,mode-line-inactive))))
    `(highlight ((,class (:background ,highlight :foreground ,default :underline nil))))
    `(region ((,class (:background ,highlight :foreground ,default))))
    `(secondary-selection ((,class (:background ,highlight :foreground ,default))))
