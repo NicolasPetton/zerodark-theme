@@ -343,8 +343,8 @@ The result is cached for one second to avoid hiccups."
    `(compilation-mode-line-error ((,class (:foreground ,red :weight bold))))
 
    ;; dired
-   `(dired-header ((,class (:foreground ,blue :weight bold))))
-   `(dired-directory ((,class (:foreground ,purple :weight normal))))
+   `(dired-header ((,class (:foreground ,blue :background ,background-blue :weight bold))))
+   `(dired-directory ((,class (:foreground ,purple :weight bold))))
 
    ;; magit
    `(magit-diff-context-highlight ((,class (:background ,background-darker))))
