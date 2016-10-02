@@ -12,12 +12,12 @@ A dark theme for [Emacs](https://www.gnu.org/software/emacs/), inspired from [Ni
 ### Magit
 
 ![Screenshot Magit](screenshot-magit.png)
-![Screenshot Diff](screenshot-diff.png)
+<!-- ![Screenshot Diff](screenshot-diff.png) -->
 
-### Emails (notmuch)
+<!-- ### Emails (notmuch) -->
 
-![Screenshot Notmuch](screenshot-notmuch-1.png)
-![Screenshot Notmuch](screenshot-notmuch-2.png)
+<!-- ![Screenshot Notmuch](screenshot-notmuch-1.png) -->
+<!-- ![Screenshot Notmuch](screenshot-notmuch-2.png) -->
 
 ### High contrast mode-line
 
