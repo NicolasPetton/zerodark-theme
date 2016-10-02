@@ -32,6 +32,13 @@ Evaluate `zerodark-setup-modeline-format` to enable the custom mode-line-format:
 
 ![Screenshot mode-line-format](screenshot-mode-line-format.png)
 
+### Alternative colorful mode-line format
+
+Evaluate `zerodark-setup-modeline-format-alt` to enable the alternative mode-line:
+
+![Screenshot mode-line-format alt 1](screenshot-mode-line-format-alt1.png)
+![Screenshot mode-line-format alt 2](screenshot-mode-line-format-alt2.png)
+
 ### Note
 
 The custom mode line provided with `zerodark-theme` uses
