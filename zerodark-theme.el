@@ -697,6 +697,7 @@ The result is cached for one second to avoid hiccups."
   (let ((class '((class color) (min-colors 89)))
         (light (if (true-color-p) "#ccd4e3" "#d7d7d7"))
         (comment (if (true-color-p) "#687080" "#707070"))
+        (purple "#c678dd")
         (mode-line (if "#1c2129" "#222222")))
     (custom-theme-set-faces
      'zerodark
@@ -708,6 +709,7 @@ The result is cached for one second to avoid hiccups."
      `(mode-line-inactive ((,class (:background ,mode-line
                                                 :height 0.9
                                                 :foreground ,comment))))
+     `(anzu-mode-line ((,class :inherit mode-line :foreground ,purple :weight bold :inverse-video t)))
      ))
 
   (setq-default mode-line-format
