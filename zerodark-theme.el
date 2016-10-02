@@ -112,34 +112,45 @@
                                         (:eval (s-truncate 25 vc-mode)))))
 
 (defvar zerodark-modeline-vc-alt '(vc-mode ("   "
-                                            (:eval (all-the-icons-faicon "code-fork"
-                                                                         :height 0.9
-                                                                         :v-adjust 0
-                                                                         :face (when (zerodark--active-window-p)
-                                                                                 (zerodark-git-face))))
-                                            (:eval (propertize (s-truncate 25 vc-mode)
-                                                               'face (when (zerodark--active-window-p)
-                                                                       (zerodark-git-face)))))))
+                                            (:eval (let ((face (zerodark-git-face)))
+                                                     (all-the-icons-faicon "code-fork"
+                                                                           :height 0.9
+                                                                           :v-adjust 0
+                                                                           :face (when (zerodark--active-window-p)
+                                                                                   face))
+                                                     (propertize (s-truncate 25 vc-mode)
+                                                                 'face (when (zerodark--active-window-p)
+                                                                         face)))))))
 
 (defun true-color-p ()
   (or
    (display-graphic-p)
    (= (tty-display-color-cells) 16777216)))
 
+(defvar zerodark--git-face-cached nil)
+(defvar zerodark--git-face-last-run nil)
+(defvar zerodark--git-face-cache-seconds 1)
 (defun zerodark-git-face ()
-  "Return the face to use based on the current repository status."
-  (if (zerop (magit-git-exit-code "diff" "--quiet"))
-      ;; nothing to commit because nothing changed
-      (if (zerop (length (magit-git-string
-                          "rev-list" (concat "origin/"
-                                             (magit-get-current-branch)
-                                             ".."
-                                             (magit-get-current-branch)))))
-          ;; nothing to push as well
-          'zerodark-git-uptodate-face
-        ;; nothing to commit, but some commits must be pushed
-        'zerodark-git-unpushed-face)
-    'zerodark-git-uncommitted-face))
+  "Return the face to use based on the current repository status.
+
+The result is cached for one second to avoid hiccups."
+  (when (or (null zerodark--git-face-cached)
+            (> (- (time-to-seconds (current-time)) zerodark--git-face-last-run)
+               zerodark--git-face-cache-seconds))
+    (setq zerodark--git-face-last-run (time-to-seconds (current-time)))
+    (setq zerodark--git-face-cached (if (magit-git-success "diff" "--quiet")
+                                        ;; nothing to commit because nothing changed
+                                        (if (zerop (length (magit-git-string
+                                                            "rev-list" (concat "origin/"
+                                                                               (magit-get-current-branch)
+                                                                               ".."
+                                                                               (magit-get-current-branch)))))
+                                            ;; nothing to push as well
+                                            'zerodark-git-uptodate-face
+                                          ;; nothing to commit, but some commits must be pushed
+                                          'zerodark-git-unpushed-face)
+                                      'zerodark-git-uncommitted-face)))
+  zerodark--git-face-cached)
 
 (let ((class '((class color) (min-colors 89)))
       (default (if (true-color-p) "#abb2bf" "#afafaf"))
@@ -689,8 +700,8 @@
      ))
 
   (setq-default mode-line-format
-                `("%e"
-                  ,zerodark-modeline-bar-alt
+                `(,zerodark-modeline-bar-alt
+                  "%e"
                   ,zerodark-modeline-ro-alt " "
                   ,zerodark-buffer-coding
                   mode-line-frame-identification " "
