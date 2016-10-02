@@ -5,9 +5,9 @@
 ;; Author: Nicolas Petton <nicolas@petton.fr>
 ;; Keywords: themes
 ;; URL: https://github.com/NicolasPetton/zerodark-theme
-;; Version: 2.1
+;; Version: 3.0
 ;; Package: zerodark-theme
-;; Package-Requires: ((s "1.9.0") (all-the-icons "2.0.0"))
+;; Package-Requires: ((s "1.9.0") (all-the-icons "2.0.0") (powerline "2.4") (magit "2.8.0"))
 
 ;; This file is NOT part of GNU Emacs
 
@@ -29,6 +29,7 @@
 
 (require 's)
 (require 'all-the-icons)
+(require 'powerline)
 
 (deftheme zerodark
   "A dark medium contrast theme")
@@ -37,10 +38,33 @@
   nil
   "A dark theme inspired from One Dark and Niflheim.")
 
-(defcustom zerodark-use-paddings-in-mode-line t
-  "When non-nil, use top and bottom paddings in the mode-line."
-  :type 'boolean
-  :group 'zerodark)
+(defface zerodark-ro-alt-face
+  '((t :background "#0088CC" :weight bold))
+  "Face for read-only buffer in the mode-line.")
+
+(defface zerodark-modified-alt-face
+  '((t :foreground "#ff6c6b" :height 0.9))
+  "Face for modified buffers in the mode-line.")
+
+(defface zerodark-not-modified-alt-face
+  '((t :foreground "#98be65" :height 0.9))
+  "Face for not modified buffers in the mode-line.")
+
+(defface zerodark-vc-alt-face
+  '((t :foreground "#61afef"))
+  "Face for vc status in the mode-line.")
+
+(defface zerodark-git-uptodate-face
+  '((t :foreground "#61afef"))
+  "Face for vc status in the mode-line.")
+
+(defface zerodark-git-unpushed-face
+  '((t :foreground "#da8548"))
+  "Face for vc status in the mode-line.")
+
+(defface zerodark-git-uncommitted-face
+  '((t :foreground "#ff6c6b"))
+  "Face for vc status in the mode-line.")
 
 (defcustom zerodark-use-high-contrast-in-mode-line t
   "When non-nil, use more contrast for the active mode-line."
@@ -57,19 +81,65 @@
                                                (all-the-icons-faicon "floppy-o" :height 1 :v-adjust 0)
                                              (all-the-icons-faicon "check" :height 1 :v-adjust 0))))
 
+(defvar zerodark-modeline-modified-alt '(:eval (if (buffer-modified-p (current-buffer))
+                                                   (all-the-icons-faicon "floppy-o"
+                                                                         :height 0.9
+                                                                         :v-adjust 0
+                                                                         :face (if (zerodark--active-window-p)
+                                                                                   'zerodark-modified-alt-face
+                                                                                 'mode-line-inactive))
+                                                 (all-the-icons-faicon "check"
+                                                                       :height 0.9
+                                                                       :v-adjust 0
+                                                                       :face (if (zerodark--active-window-p)
+                                                                                 'zerodark-not-modified-alt-face
+                                                                               'mode-line-inactive)))))
+
 (defvar zerodark-modeline-ro '(:eval (if buffer-read-only (propertize "RO " 'face 'bold) "")))
+
+(defvar zerodark-modeline-ro-alt '(:eval (if buffer-read-only
+                                             (if (zerodark--active-window-p)
+                                                 (progn
+                                                   (propertize "RO " 'face 'zerodark-ro-alt-face))
+                                               (propertize "RO " 'face 'bold))
+                                           "")))
 
 (defvar zerodark-buffer-coding '(:eval (unless (eq buffer-file-coding-system (default-value 'buffer-file-coding-system))
                                          mode-line-mule-info)))
 
 (defvar zerodark-modeline-vc '(vc-mode ("   "
-                                        (:eval (all-the-icons-faicon "code-fork" :height 1 :v-adjust 0))
+                                        (:eval (all-the-icons-faicon "code-fork" :height 0.9 :v-adjust 0))
                                         (:eval (s-truncate 25 vc-mode)))))
+
+(defvar zerodark-modeline-vc-alt '(vc-mode ("   "
+                                            (:eval (all-the-icons-faicon "code-fork"
+                                                                         :height 0.9
+                                                                         :v-adjust 0
+                                                                         :face (when (zerodark--active-window-p)
+                                                                                 (zerodark-git-face))))
+                                            (:eval (propertize (s-truncate 25 vc-mode)
+                                                               'face (when (zerodark--active-window-p)
+                                                                       (zerodark-git-face)))))))
 
 (defun true-color-p ()
   (or
    (display-graphic-p)
    (= (tty-display-color-cells) 16777216)))
+
+(defun zerodark-git-face ()
+  "Return the face to use based on the current repository status."
+  (if (zerop (magit-git-exit-code "diff" "--quiet"))
+      ;; nothing to commit because nothing changed
+      (if (zerop (length (magit-git-string
+                          "rev-list" (concat "origin/"
+                                             (magit-get-current-branch)
+                                             ".."
+                                             (magit-get-current-branch)))))
+          ;; nothing to push as well
+          'zerodark-git-uptodate-face
+        ;; nothing to commit, but some commits must be pushed
+        'zerodark-git-unpushed-face)
+    'zerodark-git-uncommitted-face))
 
 (let ((class '((class color) (min-colors 89)))
       (default (if (true-color-p) "#abb2bf" "#afafaf"))
@@ -140,25 +210,14 @@
                                      :height 0.9
                                      :foreground ,(if zerodark-use-high-contrast-in-mode-line
                                                       light
-                                                    blue)
-                                     :box ,(when zerodark-use-paddings-in-mode-line
-                                             (list :line-width 5
-                                                   :color
-                                                   (if zerodark-use-high-contrast-in-mode-line
-                                                       mode-line-active
-                                                     background-blue)))))))
+                                                    blue)))))
    `(mode-line-inactive ((,class (:background ,(if zerodark-use-high-contrast-in-mode-line
                                                    mode-line-inactive
                                                  background-darker)
                                               :height 0.9
                                               :foreground ,(if zerodark-use-high-contrast-in-mode-line
                                                       comment
-                                                    default)
-                                              :box ,(when zerodark-use-paddings-in-mode-line
-                                                      (list :line-width 5
-                                                            :color (if zerodark-use-high-contrast-in-mode-line
-                                                                       mode-line-inactive
-                                                                     background-darker)))))))
+                                                    default)))))
    `(header-line ((,class (:inherit mode-line-inactive))))
 
    ;; powerline
@@ -557,24 +616,92 @@
                               ,blue-dark
                               ,default])))
 
+(defvar zerodark-modeline-bar '(:eval (propertize " "
+                                                  'display
+                                                  (pl/percent-xpm 30 100 0 0 0 10 nil nil))))
+
+(defvar zerodark-modeline-bar-alt '(:eval (propertize " "
+                                                      'display
+                                                      (if (zerodark--active-window-p)
+                                                          (if buffer-read-only
+                                                              (pl/percent-xpm 30 100 0 0 0 6 "#0088CC" "#0088CC")
+                                                            (pl/percent-xpm 30 100 0 0 0 6 "#c678dd" "#c678dd"))
+                                                        (pl/percent-xpm 30 100 0 0 0 6 nil nil)))))
+
 ;;;###autoload
 (defun zerodark-setup-modeline-format ()
   "Setup the mode-line format for zerodark."
   (interactive)
   (setq-default mode-line-format
-              `("%e"
-                mode-line-front-space
-                ,zerodark-modeline-ro
-                ,zerodark-buffer-coding
-                mode-line-frame-identification " "
-                " "
-                ,zerodark-modeline-modified
-                " "
-                ,zerodark-modeline-buffer-identification
-                ,zerodark-modeline-position
-                ,zerodark-modeline-vc
-                "  " mode-line-modes mode-line-misc-info mode-line-end-spaces
-                )))
+                `("%e"
+                  ,zerodark-modeline-bar
+                  ,zerodark-modeline-ro
+                  ,zerodark-buffer-coding
+                  mode-line-frame-identification " "
+                  " "
+                  ,zerodark-modeline-modified
+                  " "
+                  ,zerodark-modeline-buffer-identification
+                  ,zerodark-modeline-position
+                  ,zerodark-modeline-vc
+                  "  " mode-line-modes mode-line-misc-info mode-line-end-spaces
+                  )))
+
+;; So the mode-line can keep track of "the current window"
+(defvar zerodark-selected-window nil
+  "Selected window.")
+
+(defun zerodark--set-selected-window (&rest _)
+  "Set the selected window."
+  (let ((window (frame-selected-window)))
+    (when (and (windowp window)
+               (not (minibuffer-window-active-p window)))
+      (setq zerodark-selected-window window))))
+
+(defun zerodark--active-window-p ()
+  "Return non-nil if the current window is active."
+  (eq (selected-window) zerodark-selected-window))
+
+(add-hook 'window-configuration-change-hook #'zerodark--set-selected-window)
+(add-hook 'focus-in-hook #'zerodark--set-selected-window)
+(advice-add 'select-window :after #'zerodark--set-selected-window)
+(advice-add 'select-frame  :after #'zerodark--set-selected-window)
+
+
+;;;###autoload
+(defun zerodark-setup-modeline-format-alt ()
+  "Setup the alternate mode-line format for zerodark."
+  (interactive)
+  (let ((class '((class color) (min-colors 89)))
+        (light (if (true-color-p) "#ccd4e3" "#d7d7d7"))
+        (comment (if (true-color-p) "#687080" "#707070"))
+        (mode-line (if "#1c2129" "#222222")))
+    (custom-theme-set-faces
+     'zerodark
+
+     ;; Mode line faces
+     `(mode-line ((,class (:background ,mode-line
+                                       :height 0.9
+                                       :foreground ,light))))
+     `(mode-line-inactive ((,class (:background ,mode-line
+                                                :height 0.9
+                                                :foreground ,comment))))
+     ))
+
+  (setq-default mode-line-format
+                `("%e"
+                  ,zerodark-modeline-bar-alt
+                  ,zerodark-modeline-ro-alt " "
+                  ,zerodark-buffer-coding
+                  mode-line-frame-identification " "
+                  " "
+                  ,zerodark-modeline-modified-alt
+                  " "
+                  ,zerodark-modeline-buffer-identification
+                  ,zerodark-modeline-position
+                  ,zerodark-modeline-vc-alt
+                  "  " mode-line-modes mode-line-misc-info mode-line-end-spaces
+                  )))
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
