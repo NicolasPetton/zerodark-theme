@@ -753,7 +753,8 @@ The result is cached for one second to avoid hiccups."
      `(mode-line-inactive ((,class (:background ,mode-line
                                                 :height 0.9
                                                 :foreground ,comment
-                                                :box 1))))
+                                                :box ,(list :line-width 1
+                                                            :color comment)))))
      `(anzu-mode-line ((,class :inherit mode-line :foreground ,purple :weight bold :inverse-video t)))
      ))
 
