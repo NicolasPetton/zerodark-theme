@@ -687,6 +687,8 @@ The result is cached for one second to avoid hiccups."
 (defun zerodark-setup-modeline-format ()
   "Setup the mode-line format for zerodark."
   (interactive)
+  (require 'flycheck)
+  (require 'magit)
   (setq-default mode-line-format
                 `("%e"
                   ,zerodark-modeline-bar
@@ -732,6 +734,8 @@ The result is cached for one second to avoid hiccups."
 (defun zerodark-setup-modeline-format-alt ()
   "Setup the alternate mode-line format for zerodark."
   (interactive)
+  (require 'flycheck)
+  (require 'magit)
   (let ((class '((class color) (min-colors 89)))
         (light (if (true-color-p) "#ccd4e3" "#d7d7d7"))
         (comment (if (true-color-p) "#687080" "#707070"))
