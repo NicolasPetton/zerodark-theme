@@ -5,9 +5,9 @@
 ;; Author: Nicolas Petton <nicolas@petton.fr>
 ;; Keywords: themes
 ;; URL: https://github.com/NicolasPetton/zerodark-theme
-;; Version: 3.0
+;; Version: 3.5
 ;; Package: zerodark-theme
-;; Package-Requires: ((s "1.9.0") (all-the-icons "2.0.0") (powerline "2.4") (magit "2.8.0"))
+;; Package-Requires: ((s "1.9.0") (all-the-icons "2.0.0") (powerline "2.4") (magit "2.8.0") (flycheck "29"))
 
 ;; This file is NOT part of GNU Emacs
 
