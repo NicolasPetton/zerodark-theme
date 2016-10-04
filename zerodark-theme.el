@@ -348,7 +348,7 @@ The result is cached for one second to avoid hiccups."
    `(compilation-line-number ((,class (:foreground ,green :weight bold))))
    `(compilation-mode-line-exit ((,class (:foreground ,green :weight bold :inverse-video nil))))
    `(compilation-mode-line-run ((,class (:foreground ,orange :weight bold))))
-   `(compilation-mode-line-error ((,class (:foreground ,red :weight bold))))
+   `(compilation-mode-line-fail ((,class (:foreground ,red :weight bold))))
 
    ;; dired
    `(dired-header ((,class (:foreground ,blue :background ,background-blue :weight bold))))
