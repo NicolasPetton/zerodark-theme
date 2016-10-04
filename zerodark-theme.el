@@ -275,6 +275,11 @@ The result is cached for one second to avoid hiccups."
                                                     default)))))
    `(header-line ((,class (:background ,background-darker :foreground ,comment))))
 
+   ;; error & success
+   `(error ((,class (:foreground ,red :weight bold))))
+   `(warning ((,class (:foreground ,orange :weight bold))))
+   `(success ((,class (:foreground ,green :weight bold))))
+
    ;; powerline
    `(powerline-active1 ((,class (:height 0.9 :foreground ,blue :background ,background-darker))))
    `(powerline-active2 ((,class (:height 0.9 :foreground ,blue :background ,background-lighter))))
