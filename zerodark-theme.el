@@ -273,7 +273,7 @@ The result is cached for one second to avoid hiccups."
                                               :foreground ,(if zerodark-use-high-contrast-in-mode-line
                                                       comment
                                                     default)))))
-   `(header-line ((,class (:inherit mode-line-inactive))))
+   `(header-line ((,class (:background ,background-darker :foreground ,comment))))
 
    ;; powerline
    `(powerline-active1 ((,class (:height 0.9 :foreground ,blue :background ,background-darker))))
@@ -471,6 +471,10 @@ The result is cached for one second to avoid hiccups."
    `(org-scheduled-today ((,class (:foreground ,default :weight bold))))
    `(org-agenda-done ((,class (:foreground ,comment))))
    `(org-time-grid ((,class (:foreground ,comment))))
+
+   ;; org columns
+   `(org-column ((,class (:background ,background-darker))))
+   `(org-column-title ((,class (:background ,background-blue :foreground ,blue :weight bold))))
 
    ;; org blocks
    `(org-block-begin-line ((,class (:background ,background-green :foreground ,green-light :height 0.9))))
