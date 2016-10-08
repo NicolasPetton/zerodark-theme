@@ -671,6 +671,9 @@ The result is cached for one second to avoid hiccups."
    ;; ace-window
    `(aw-leading-char-face ((,class :foreground ,red :weight bold)))
    `(aw-background-face ((,class :foreground ,comment)))
+
+   ;; paren-face.el
+   `(parenthesis ((,class (:foreground ,comment))))
    )
 
   (custom-theme-set-variables
