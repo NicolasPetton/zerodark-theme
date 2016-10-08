@@ -667,6 +667,10 @@ The result is cached for one second to avoid hiccups."
    `(jabber-activity-personal-face ((,class :foreground ,red :background ,background-red :weight bold)))
    `(jabber-roster-user-away ((,class :foreground ,orange)))
    `(jabber-roster-user-xa ((,class :foreground ,orange)))
+
+   ;; ace-window
+   `(aw-leading-char-face ((,class :foreground ,red :weight bold)))
+   `(aw-background-face ((,class :foreground ,comment)))
    )
 
   (custom-theme-set-variables
