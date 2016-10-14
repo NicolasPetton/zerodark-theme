@@ -654,8 +654,11 @@ The result is cached for one second to avoid hiccups."
 
    ;; Anzu
 
-   `(anzu-replace-highlight ((,class :background ,diff-removed-refined-background :strike-through t)))
-   `(anzu-replace-to ((,class :background ,diff-added-refined-background)))
+   `(anzu-replace-highlight ((,class :foreground ,red :background ,background-red :strike-through t)))
+   `(anzu-replace-to ((,class :foreground ,green :background ,background-green)))
+   `(anzu-match-1 ((,class :foreground ,red :background ,background-red :box t)))
+   `(anzu-match-2 ((,class :foreground ,red :background ,background-red :box t)))
+   `(anzu-match-3 ((,class :foreground ,red :background ,background-red :box t)))
    `(anzu-mode-line ((,class :inherit mode-line :weight bold)))
 
    ;; jabber.el
