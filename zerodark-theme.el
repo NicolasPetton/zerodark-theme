@@ -30,6 +30,8 @@
 (require 's)
 (require 'all-the-icons)
 (require 'powerline)
+(when (require 'powerline-evil nil 'noerror)
+  (require 'powerline-evil))
 
 (defmacro cached-for (secs &rest body)
   "Cache for SECS the result of the evaluation of BODY."
@@ -120,6 +122,9 @@
                                                    (propertize "RO " 'face 'zerodark-ro-alt-face))
                                                (propertize "RO " 'face 'bold))
                                            "")))
+
+(defvar zerodark-modeline-evil '(:eval (if evil-mode
+                                           (propertize (powerline-evil-tag) 'face 'bold) "")))
 
 (defvar zerodark-buffer-coding '(:eval (unless (eq buffer-file-coding-system (default-value 'buffer-file-coding-system))
                                          mode-line-mule-info)))
@@ -778,6 +783,7 @@ The result is cached for one second to avoid hiccups."
                 `(,zerodark-modeline-bar-alt
                   "%e"
                   ,zerodark-modeline-ro-alt " "
+                  ,zerodark-modeline-evil
                   ,zerodark-buffer-coding
                   mode-line-frame-identification " "
                   " "
