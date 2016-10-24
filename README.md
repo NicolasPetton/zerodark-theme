@@ -3,6 +3,8 @@ Zerodark Emacs theme [![MEPLA](http://melpa.org/packages/zerodark-theme-badge.sv
 
 A dark theme for [Emacs](https://www.gnu.org/software/emacs/), inspired from [Niflheim](https://github.com/niflheim-theme/emacs) and [One Dark](https://github.com/atom/one-dark-syntax)
 
+Repository mirrored with [petton.fr/git/nico/zerodark-theme](https://petton.fr/git/nico/zerodark-theme).
+
 ## Screenshots
 
 ### Elisp
