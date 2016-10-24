@@ -122,7 +122,7 @@
                                                (propertize "RO " 'face 'bold))
                                            "")))
 
-(defvar zerodark-modeline-evil '(:eval (if evil-mode
+(defvar zerodark-modeline-evil '(:eval (if (and evil-mode (featurep 'powerline-evil))
                                            (propertize (powerline-evil-tag) 'face 'bold) "")))
 
 (defvar zerodark-buffer-coding '(:eval (unless (eq buffer-file-coding-system (default-value 'buffer-file-coding-system))
