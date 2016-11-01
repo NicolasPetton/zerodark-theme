@@ -5,9 +5,9 @@
 ;; Author: Nicolas Petton <nicolas@petton.fr>
 ;; Keywords: themes
 ;; URL: https://github.com/NicolasPetton/zerodark-theme
-;; Version: 3.5
+;; Version: 3.6
 ;; Package: zerodark-theme
-;; Package-Requires: ((s "1.9.0") (all-the-icons "2.0.0") (powerline "2.4") (magit "2.8.0") (flycheck "29"))
+;; Package-Requires: ((all-the-icons "2.0.0") (powerline "2.4") (magit "2.8.0") (flycheck "29"))
 
 ;; This file is NOT part of GNU Emacs
 
@@ -27,7 +27,6 @@
 
 ;;; Code:
 
-(require 's)
 (require 'all-the-icons)
 (require 'powerline)
 
@@ -126,7 +125,7 @@
 
 (defvar zerodark-modeline-vc '(vc-mode ("   "
                                         (:eval (all-the-icons-faicon "code-fork" :height 0.9 :v-adjust 0))
-                                        (:eval (s-truncate 25 vc-mode)))))
+                                        (:eval (truncate-string-to-width 25 vc-mode)))))
 
 (defvar zerodark-modeline-vc-alt '(vc-mode ("   "
                                             (:eval (all-the-icons-faicon "code-fork"
@@ -134,7 +133,7 @@
                                                                          :v-adjust 0
                                                                          :face (when (zerodark--active-window-p)
                                                                                  (zerodark-git-face))))
-                                            (:eval (propertize (s-truncate 25 vc-mode)
+                                            (:eval (propertize (truncate-string-to-width 25 vc-mode)
                                                                'face (when (zerodark--active-window-p)
                                                                        (zerodark-git-face)))))))
 
