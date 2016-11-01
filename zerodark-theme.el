@@ -125,7 +125,7 @@
 
 (defvar zerodark-modeline-vc '(vc-mode ("   "
                                         (:eval (all-the-icons-faicon "code-fork" :height 0.9 :v-adjust 0))
-                                        (:eval (truncate-string-to-width 25 vc-mode)))))
+                                        (:eval (truncate-string-to-width 25 vc-mode nil nil "...")))))
 
 (defvar zerodark-modeline-vc-alt '(vc-mode ("   "
                                             (:eval (all-the-icons-faicon "code-fork"
@@ -133,7 +133,7 @@
                                                                          :v-adjust 0
                                                                          :face (when (zerodark--active-window-p)
                                                                                  (zerodark-git-face))))
-                                            (:eval (propertize (truncate-string-to-width 25 vc-mode)
+                                            (:eval (propertize (truncate-string-to-width 25 vc-mode nil nil "...")
                                                                'face (when (zerodark--active-window-p)
                                                                        (zerodark-git-face)))))))
 
