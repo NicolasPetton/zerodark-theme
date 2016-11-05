@@ -624,6 +624,8 @@ The result is cached for one second to avoid hiccups."
    `(term-default-fg-color ((,class (:inherit term-color-white))))
    `(term-default-bg-color ((,class (:inherit term-color-black))))
 
+   `(sh-heredoc ((,class (:foreground ,orange :weight bold))))
+
    `(avy-lead-face ((,class :foreground ,red :background ,background-red)))
    `(avy-lead-face-0 ((,class :foreground ,purple :background ,background-purple)))
    `(avy-lead-face-1 ((,class :foreground ,blue :background ,background-blue)))
