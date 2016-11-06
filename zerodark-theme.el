@@ -549,6 +549,7 @@ The result is cached for one second to avoid hiccups."
    `(ivy-minibuffer-match-face-3 ((,class (:foreground ,orange))))
    `(ivy-minibuffer-match-face-4 ((,class (:foreground ,green))))
    `(ivy-match-required-face ((,class (:foreground ,red :background ,background-red :weight bold))))
+   `(ivy-modified-buffer ((,class (:foreground ,red))))
    `(ivy-remote ((,class (:foreground ,blue))))
 
    ;; helm
