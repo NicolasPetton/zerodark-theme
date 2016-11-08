@@ -465,6 +465,7 @@ The result is cached for one second to avoid hiccups."
    `(org-date ((,class (:background ,background-lighter))))
    `(org-scheduled-previously ((,class (:foreground ,red))))
    `(org-scheduled ((,class (:foreground ,default))))
+   `(org-upcoming-deadline ((,class (:foreground ,orange))))
    `(org-headline-done ((,class (:foreground ,comment))))
    `(outline-1 ((,class (:foreground ,blue :weight bold))))
    `(outline-2 ((,class (:foreground ,purple :weight bold))))
