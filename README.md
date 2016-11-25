@@ -40,6 +40,39 @@ in `all-the-icons` repository as explained in its README:
 > in order for the icons to work you will need to install the Resource Fonts
 > included in this package, they are available in the fonts directory.
 
+### Supported packages
+
+Zerodark supports for many packages, including the following:
+
+- ace-window
+- anzu
+- avy
+- clojure-mode
+- company-mode
+- diff-hl
+- ediff
+- elfeed
+- erc
+- eshell
+- flycheck
+- helm
+- hydra
+- ido
+- ivy
+- jabber.el
+- js2-mode
+- ledger
+- linum
+- magit
+- notmuch
+- orgmode
+- powerline
+- show-paren
+- visible-mark
+- web-mode
+- wgrep
+- whitespace-mode
+
 ## Installation (with MELPA)
 
     M-x package-install RET zerodark-theme
