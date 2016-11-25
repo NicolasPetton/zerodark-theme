@@ -733,6 +733,7 @@ The result is cached for one second to avoid hiccups."
 
   (setq-default mode-line-format
                 `("%e"
+                  " "
                   ,zerodark-modeline-ro " "
                   ,zerodark-buffer-coding
                   mode-line-frame-identification " "
