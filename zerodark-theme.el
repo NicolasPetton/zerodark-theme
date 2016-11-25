@@ -728,7 +728,7 @@ The result is cached for one second to avoid hiccups."
                                                 :foreground ,comment
                                                 :box ,(when zerodark-use-paddings-in-mode-line
                                                         (list :line-width 6 :color mode-line))))))
-     `(anzu-mode-line ((,class :inherit mode-line :foreground ,purple :weight bold :inverse-video t)))
+     `(anzu-mode-line ((,class :inherit mode-line :foreground ,purple :weight bold)))
      ))
 
   (setq-default mode-line-format
