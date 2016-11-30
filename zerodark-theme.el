@@ -664,6 +664,9 @@ The result is cached for one second to avoid hiccups."
 
    ;; paren-face.el
    `(parenthesis ((,class (:foreground ,comment))))
+
+   ;; makefile
+   `(makefile-space ((,class (:background ,background-blue))))
    )
 
   (custom-theme-set-variables
