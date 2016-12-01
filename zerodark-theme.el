@@ -337,14 +337,32 @@ The result is cached for one second to avoid hiccups."
    `(dired-header ((,class (:foreground ,blue :background ,background-blue :weight bold))))
    `(dired-directory ((,class (:foreground ,purple :weight bold))))
 
+   ;; diff
+   `(diff-removed ((,class (:background ,background-red :foreground ,red))))
+   `(diff-added ((,class (:background ,background-green :foreground ,green))))
+   `(diff-hunk-header ((,class (:background ,background-blue :weight bold :foreground ,blue))))
+   `(diff-file-header ((,class (:weight bold))))
+   `(diff-header ((,class (:background ,background :foreground ,blue))))
+   `(diff-context ((,class (:foreground ,default))))
+   `(diff-refine-added ((,class (:foreground ,green :background ,background-green :weight bold :underline t))))
+   `(diff-refine-removed ((,class (:background ,background-red :foreground ,red :weight bold :underline t))))
+
+   ;; ediff
+   `(ediff-fine-diff-B ((,class (:inherit diff-refine-added))))
+   `(ediff-current-diff-B ((,class (:inherit diff-added))))
+   `(ediff-fine-diff-A ((,class (:inherit diff-refine-removed))))
+   `(ediff-current-diff-A ((,class (:inherit diff-removed))))
+   `(ediff-fine-diff-C ((,class (:foreground ,blue :background ,background-blue :weight bold :underline t))))
+   `(ediff-current-diff-C ((,class (:background ,background-blue :foreground ,blue))))
+
    ;; magit
    `(magit-diff-context-highlight ((,class (:background ,background-darker))))
    `(magit-diff-file-heading ((,class (:weight bold :foreground ,blue))))
    `(magit-diff-file-heading-highlight ((,class (:weight bold :foreground ,blue :background ,background-blue))))
-   `(magit-diff-removed-highlight ((,class (:background ,diff-removed-background))))
-   `(magit-diff-removed ((,class (:background ,diff-removed-background))))
-   `(magit-diff-added-highlight ((,class (:background ,diff-added-background))))
-   `(magit-diff-added ((,class (:background ,diff-added-background))))
+   `(magit-diff-removed-highlight ((,class (:inherit diff-removed))))
+   `(magit-diff-removed ((,class (:inherit diff-removed))))
+   `(magit-diff-added-highlight ((,class (:inherit diff-added))))
+   `(magit-diff-added ((,class (:inherit diff-added))))
    `(magit-diff-lines-heading ((,class (:background ,blue-dark :foreground "white"))))
    `(magit-diff-hunk-heading ((,class (:background ,background-lighter))))
    `(magit-diff-hunk-heading-highlight ((,class (:background ,blue-dark))))
@@ -496,23 +514,6 @@ The result is cached for one second to avoid hiccups."
 
    ;; which-function
    `(which-func ((,class (:foreground ,purple))))
-
-   ;; diff
-   `(diff-removed ((,class (:foreground ,default :background ,diff-removed-background))))
-   `(diff-added ((,class (:foreground ,default :background ,diff-added-background))))
-   `(diff-hunk-header ((,class (:background ,background-blue :weight bold :foreground ,blue))))
-   `(diff-file-header ((,class (:weight bold))))
-   `(diff-header ((,class (:background ,background :foreground ,blue))))
-   `(diff-context ((,class (:foreground ,default))))
-   `(diff-refine-added ((,class (:foreground ,grey :background ,diff-added-refined-background))))
-   `(diff-refine-removed ((,class (:background ,diff-removed-refined-background :foreground ,grey))))
-
-   ;; ediff
-   `(ediff-fine-diff-B ((,class (:foreground ,grey :background ,diff-added-refined-background))))
-   `(ediff-current-diff-B ((,class (:background ,diff-added-background))))
-   `(ediff-fine-diff-A ((,class (:background ,diff-removed-refined-background :foreground ,grey))))
-   `(ediff-current-diff-C ((,class (:background ,diff-current-background))))
-   `(ediff-fine-diff-C ((,class (:foreground ,grey :background ,diff-current-refined-background))))
 
    `(ediff-even-diff-A ((,class (:background ,highlight :foreground unspecified))))
    `(ediff-even-diff-B ((,class (:background ,highlight :foreground unspecified))))
