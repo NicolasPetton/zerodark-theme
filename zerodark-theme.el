@@ -218,7 +218,7 @@ The result is cached for one second to avoid hiccups."
       (diff-removed-background (if (true-color-p) "#583333" "#580000"))
       (diff-removed-refined-background (if (true-color-p) "#b33c49" "#b33c49"))
       (diff-current-background (if (true-color-p) "#29457b" "#29457b"))
-      (diff-current-refined-background (if (true-color-p) "#487fbc" "#487fbc")))
+      (diff-current-refined-background (if (true-color-p) "#4174ae" "#4174ae")))
   (custom-theme-set-faces
    'zerodark
    `(default ((,class (:background ,background :foreground ,default))))
