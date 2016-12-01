@@ -667,6 +667,13 @@ The result is cached for one second to avoid hiccups."
 
    ;; makefile
    `(makefile-space ((,class (:background ,background-blue))))
+
+   ;; epa
+   `(epa-validity-high ((,class (:foreground ,green))))
+   `(epa-validity-low ((,class (:foreground ,default))))
+   `(epa-validity-disabled ((,class (:foreground ,red :weight bold :background ,background-red))))
+   `(epa-field-name ((,class (:foreground ,purple :weight bold))))
+   `(epa-field-body ((,class (:foreground ,orange))))
    )
 
   (custom-theme-set-variables
