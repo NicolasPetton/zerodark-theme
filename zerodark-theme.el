@@ -214,11 +214,11 @@ The result is cached for one second to avoid hiccups."
       (green-light (if (true-color-p) "#9eac8c" "#afaf87"))
       (peach "PeachPuff3")
       (diff-added-background (if (true-color-p) "#284437" "#284437"))
-      (diff-added-refined-background (if (true-color-p) "#198754" "#00875f"))
+      (diff-added-refined-background (if (true-color-p) "#1e8967" "#1e8967"))
       (diff-removed-background (if (true-color-p) "#583333" "#580000"))
-      (diff-removed-refined-background (if (true-color-p) "#981b1b" "#870000"))
-      (diff-current-background (if (true-color-p) "#3e4d58" "#5f;5f5f"))
-      (diff-current-refined-background (if (true-color-p) "#456981" "#5f5f87")))
+      (diff-removed-refined-background (if (true-color-p) "#b33c49" "#b33c49"))
+      (diff-current-background (if (true-color-p) "#29457b" "#29457b"))
+      (diff-current-refined-background (if (true-color-p) "#487fbc" "#487fbc")))
   (custom-theme-set-faces
    'zerodark
    `(default ((,class (:background ,background :foreground ,default))))
