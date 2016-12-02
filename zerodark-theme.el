@@ -372,9 +372,9 @@ The result is cached for one second to avoid hiccups."
 
    `(magit-section-highlight ((,class (:background ,background-darker))))
    `(magit-section-heading ((,class (:foreground ,grey :weight bold))))
-   `(magit-branch-current ((,class (:foreground ,blue :box 1))))
-   `(magit-branch-local ((,class (:foreground ,purple :box 1))))
-   `(magit-branch-remote ((,class (:foreground ,green :box 1))))
+   `(magit-branch-current ((,class (:foreground ,blue :background ,background-darker :box 1))))
+   `(magit-branch-local ((,class (:foreground ,purple :background ,background-darker :box 1))))
+   `(magit-branch-remote ((,class (:foreground ,green :background ,background-darker :box 1))))
 
    `(magit-reflog-reset ((,class (:background ,background-red :foreground ,red :weight bold))))
    `(magit-reflog-amend ((,class (:background ,background-blue :foreground ,blue :weight bold))))
