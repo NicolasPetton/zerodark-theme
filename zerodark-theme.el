@@ -194,9 +194,12 @@ The result is cached for one second to avoid hiccups."
       (mode-line-active (if (true-color-p) "#6f337e" "#875f87"))
       (background-lighter (if (true-color-p) "#3a3f4b" "#5f5f5f"))
       (background-red (if (true-color-p) "#4c3840" "#5f5f5f"))
+      (bright-background-red (if (true-color-p) "#744a5b" "#744a5b"))
       (background-purple (if (true-color-p) "#48384c" "#5f5f5f"))
       (background-blue (if (true-color-p) "#38394c" "#444444"))
+      (bright-background-blue (if (true-color-p) "#4e5079" "#4e5079"))
       (background-green (if (true-color-p) "#3d4a41" "#5f5f5f"))
+      (bright-background-green (if (true-color-p) "#3f6d54" "#3f6d54"))
       (background-orange (if (true-color-p) "#4a473d" "#5f5f5f"))
       (hl-line (if (true-color-p) "#2c323b" "#333333"))
       (grey (if (true-color-p) "#cccccc" "#cccccc"))
@@ -344,15 +347,15 @@ The result is cached for one second to avoid hiccups."
    `(diff-file-header ((,class (:weight bold))))
    `(diff-header ((,class (:background ,background :foreground ,blue))))
    `(diff-context ((,class (:foreground ,default))))
-   `(diff-refine-added ((,class (:foreground ,green :background ,background-green :weight bold :underline t))))
-   `(diff-refine-removed ((,class (:background ,background-red :foreground ,red :weight bold :underline t))))
+   `(diff-refine-added ((,class (:foreground ,green :background ,bright-background-green))))
+   `(diff-refine-removed ((,class (:background ,bright-background-red :foreground ,red))))
 
    ;; ediff
    `(ediff-fine-diff-B ((,class (:inherit diff-refine-added))))
    `(ediff-current-diff-B ((,class (:inherit diff-added))))
    `(ediff-fine-diff-A ((,class (:inherit diff-refine-removed))))
    `(ediff-current-diff-A ((,class (:inherit diff-removed))))
-   `(ediff-fine-diff-C ((,class (:foreground ,blue :background ,background-blue :weight bold :underline t))))
+   `(ediff-fine-diff-C ((,class (:foreground ,blue :background ,bright-background-blue))))
    `(ediff-current-diff-C ((,class (:background ,background-blue :foreground ,blue))))
 
    ;; magit
