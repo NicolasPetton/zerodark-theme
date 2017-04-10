@@ -1,4 +1,4 @@
-Zerodark Emacs theme [![MELPA](http://melpa.org/packages/zerodark-theme-badge.svg)](http://melpa.org/#/zerodark-theme)[![Gratipay Team](https://img.shields.io/gratipay/team/zerodark.svg?maxAge=2592000)](https://gratipay.com/zerodark/)
+Zerodark Emacs theme [![MELPA](http://melpa.org/packages/zerodark-theme-badge.svg)](http://melpa.org/#/zerodark-theme)[![Gratipay Team](https://img.shields.io/gratipay/team/zerodark-theme.svg?maxAge=2592000)](https://gratipay.com/zerodark-theme/)
 
 ===============================================================================
 
