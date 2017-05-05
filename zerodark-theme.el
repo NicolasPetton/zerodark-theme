@@ -672,8 +672,8 @@ The result is cached for one second to avoid hiccups."
    `(parenthesis ((,class (:foreground ,comment))))
 
    ;; rainbow-delimiters
-   `(rainbow-delimiters-mismatched-face ((,class :foreground ,red :weight bold)))
-   `(rainbow-delimiters-unmatched-face ((,class :foreground ,red :weight bold, :background ,background-red)))
+   `(rainbow-delimiters-mismatched-face ((,class :foreground ,red :weight bold :background ,background-red)))
+   `(rainbow-delimiters-unmatched-face ((,class :foreground ,red :weight bold :background ,background-red)))
 
    ;; makefile
    `(makefile-space ((,class (:background ,background-blue))))
