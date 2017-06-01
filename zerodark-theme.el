@@ -448,6 +448,8 @@ The result is cached for one second to avoid hiccups."
    ;; js2-mode
    `(js2-function-param ((,class (:foreground ,blue))))
    `(js2-error ((,class (:foreground ,red))))
+   `(js2-jsdoc-html-tag-name ((,class (:foreground ,peach))))
+   `(js2-jsdoc-html-tag-delimiter ((,class (:foreground ,peach))))
 
    ;; flycheck
    `(flycheck-fringe-error ((,class (:foreground ,red :background ,background-red :weight bold :inverse-video t))))
