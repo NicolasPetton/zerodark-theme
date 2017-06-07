@@ -253,13 +253,13 @@ The result is cached for one second to avoid hiccups."
    `(font-lock-warning-face ((,class (:foreground ,red :weight bold :background ,background-red))))
 
    ;; Mode line faces
-      `(mode-line ((,class (:background ,background-blue :height 0.9 :foreground ,blue
+   `(mode-line ((,class (:background ,background-blue :height 0.9 :foreground ,blue
                                      :box ,(when zerodark-use-paddings-in-mode-line
-                                              (list :line-width 6 :color background-blue))))))
-      `(mode-line-inactive ((,class (:background ,background-darker :height 0.9 :foreground ,default
-                                                 :box ,(when zerodark-use-paddings-in-mode-line
-                                                         (list :line-width 6 :color background-darker))))))
-      `(header-line ((,class (:inherit mode-line-inactive))))
+                                             (list :line-width 6 :color background-blue))))))
+   `(mode-line-inactive ((,class (:background ,background-darker :height 0.9 :foreground ,default
+                                              :box ,(when zerodark-use-paddings-in-mode-line
+                                                      (list :line-width 6 :color background-darker))))))
+   `(header-line ((,class (:inherit mode-line-inactive))))
 
    ;; error & success
    `(error ((,class (:foreground ,red :weight bold))))
@@ -686,6 +686,16 @@ The result is cached for one second to avoid hiccups."
    `(epa-validity-disabled ((,class (:foreground ,red :weight bold :background ,background-red))))
    `(epa-field-name ((,class (:foreground ,purple :weight bold))))
    `(epa-field-body ((,class (:foreground ,orange))))
+
+   ;; tabbar
+   `(tabbar-default ((,class (:inherit variable-pitch :background ,background-darker :foreground ,green-light :height 0.9))))
+   `(tabbar-button ((,class (:inherit tabbar-default ))))
+   `(tabbar-button-highlight ((,class (:inherit tabbar-default))))
+   `(tabbar-highlight ((,class (:underline t))))
+   `(tabbar-selected ((,class (:inherit tabbar-default :foreground ,orange :background ,background :weight bold))))
+   `(tabbar-separator ((,class (:inherit tabbar-default :background ,background-darker))))
+   `(tabbar-unselected ((,class (:inherit tabbar-default :slant italic :weight semi-bold))))
+
    )
 
   (custom-theme-set-variables
