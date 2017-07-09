@@ -285,6 +285,10 @@ The result is cached for one second to avoid hiccups."
    ;; from hlinum
    `(linum-highlight-face ((,class (:foreground ,blue ,background ,background-blue))))
 
+   ;; native line numbers (emacs 26)
+   `(line-number ((,class (:foreground ,comment :background ,background))))
+   `(line-number-current-line ((,class (:foreground ,blue ,background ,background-blue))))
+
    ;; eshell
    `(eshell-prompt ((,class (:foreground ,orange :background ,background :weight bold))))
    `(eshell-ls-directory ((,class (:foreground ,purple :background ,background :weight bold))))
