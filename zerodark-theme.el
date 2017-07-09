@@ -286,8 +286,8 @@ The result is cached for one second to avoid hiccups."
    `(linum-highlight-face ((,class (:foreground ,blue ,background ,background-blue))))
 
    ;; native line numbers (emacs 26)
-   `(line-number ((,class (:foreground ,comment :background ,background))))
-   `(line-number-current-line ((,class (:foreground ,blue ,background ,background-blue))))
+   `(line-number ((,class (:foreground ,comment :background ,background-darker))))
+   `(line-number-current-line ((,class (:foreground ,blue :background ,background-darker))))
 
    ;; eshell
    `(eshell-prompt ((,class (:foreground ,orange :background ,background :weight bold))))
