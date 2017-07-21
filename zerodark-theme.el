@@ -290,7 +290,7 @@ The result is cached for one second to avoid hiccups."
    `(line-number-current-line ((,class (:foreground ,blue :background ,background-darker))))
 
    ;; eshell
-   `(eshell-prompt ((,class (:foreground ,orange :background ,background :weight bold))))
+   `(eshell-prompt ((,class (:foreground ,blue :background ,background :weight bold))))
    `(eshell-ls-directory ((,class (:foreground ,purple :background ,background :weight bold))))
    `(eshell-ls-symlink ((,class (:foreground ,orange :background ,background :weight normal))))
    `(eshell-ls-executable ((,class (:foreground ,green :background ,background :weight bold))))
