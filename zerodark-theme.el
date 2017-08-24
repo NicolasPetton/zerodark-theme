@@ -707,6 +707,22 @@ The result is cached for one second to avoid hiccups."
    `(tabbar-separator ((,class (:inherit tabbar-default :background ,background-darker))))
    `(tabbar-unselected ((,class (:inherit tabbar-default :slant italic :weight semi-bold))))
 
+   ;; markup-face
+   `(markup-title-0-face ((,class (:foreground ,blue :weight bold :underline t))))
+   `(markup-title-1-face ((,class (:foreground ,purple :weight bold :underline t))))
+   `(markup-title-2-face ((,class (:foreground ,peach :weight bold :underline t))))
+   `(markup-title-3-face ((,class (:foreground ,green-light :weight bold :underline t))))
+   `(markup-title-4-face ((,class (:foreground ,blue :weight bold :underline t))))
+   `(markup-title-5-face ((,class (:foreground ,purple :weight bold :underline t))))
+   `(markup-error-face ((,class (:foreground ,red :background ,background-red :weight bold))))
+   `(markup-gen-face ((,class (:foreground ,blue))))
+   `(markup-typewriter-face ((,class (:inherit shadow))))
+   `(markup-meta-face ((,class (:foreground ,comment))))
+   `(markup-meta-hide-face ((,class (:foreground ,comment))))
+   `(markup-verbatim-face ((,class (:inherit shadow :background ,background-lighter))))
+   `(markup-reference-face ((,class (:inherit link))))
+   `(markup-complex-replacement-face ((,class (:background ,background-green))))
+   `(markup-secondary-text-face ((,class (:foreground ,comment))))
    )
 
   (custom-theme-set-variables
