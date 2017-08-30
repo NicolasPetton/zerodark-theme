@@ -65,6 +65,7 @@ Zerodark supports for many packages, including the following:
 - ledger
 - linum
 - magit
+- markup-face
 - notmuch
 - orgmode
 - powerline
