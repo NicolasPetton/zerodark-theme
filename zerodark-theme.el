@@ -643,6 +643,9 @@ The result is cached for one second to avoid hiccups."
    `(erc-prompt-face ((,class :foreground ,purple :background ,background-purple :weight bold :box 1)))
    `(erc-timestamp-face ((,class :foreground ,purple :weight bold)))
 
+   ;; slack
+   `(slack-message-output-header ((,class :foreground ,blue :background ,background-blue :weight bold)))
+
    `(hydra-face-red ((,class :foreground ,red :weight bold)))
    `(hydra-face-blue ((,class :foreground ,blue :weight bold)))
 
