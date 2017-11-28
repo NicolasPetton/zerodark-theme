@@ -732,6 +732,10 @@ The result is cached for one second to avoid hiccups."
    `(markup-reference-face ((,class (:inherit link))))
    `(markup-complex-replacement-face ((,class (:background ,background-green))))
    `(markup-secondary-text-face ((,class (:foreground ,comment))))
+
+   ;; Elbank
+   `(elbank-progressbar-fill-face ((,class (:background ,diff-added-refined-background :weight bold))))
+   `(elbank-progressbar-overflow-face ((,class (:background ,diff-removed-refined-background :weight bold))))
    )
 
   (custom-theme-set-variables
