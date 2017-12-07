@@ -80,3 +80,13 @@ Zerodark supports for many packages, including the following:
     M-x package-install RET zerodark-theme
 
 Copyright 2015-2017 (C) Nicolas Petton
+
+## Setup
+
+Add the following to you `init.el`:
+
+    (load-theme 'zerodark t)
+	;; Optionally setup the modeline
+	(zerodark-setup-modeline-format)
+	
+Or execute `M-x load-theme RET zerodark RET`.
