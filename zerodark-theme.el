@@ -596,7 +596,7 @@ The result is cached for one second to avoid hiccups."
    `(visible-mark-face2 ((,class (:foreground ,peach :inverse-video t))))
 
    ;; show-paren
-   `(show-paren-match ((,class (:background ,blue-dark))))
+   `(show-paren-match ((,class (:foreground ,blue :weight bold))))
 
    ;; clojure
    `(clojure-keyword-face ((,class (:inherit font-lock-builtin-face))))
