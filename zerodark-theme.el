@@ -400,6 +400,9 @@ The result is cached for one second to avoid hiccups."
    `(magit-bisect-bad ((,class (:background ,background-red :foreground ,red :box 1))))
    `(magit-bisect-good ((,class (:background ,background-blue :foreground ,blue :box 1))))
 
+   `(magit-signature-bad ((,class (:foreground ,red))))
+   `(magit-signature-good ((,class (:foreground ,blue))))
+
    `(magit-blame-heading ((,class (:foreground ,green :background ,background-green :box 1))))
 
    `(git-commit-summary ((,class (:weight bold))))
