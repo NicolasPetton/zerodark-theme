@@ -55,12 +55,18 @@
 
 (defgroup zerodark
   nil
-  "A dark theme inspired from One Dark and Niflheim.")
+  "A dark theme inspired from One Dark and Niflheim."
+  :group 'faces)
 
 (defcustom zerodark-use-paddings-in-mode-line t
   "When non-nil, use top and bottom paddings in the mode-line."
-  :type 'boolean
-  :group 'zerodark)
+  :type 'boolean)
+
+(defcustom zerodark-theme-display-vc-status 'full
+  "Control how version control information is displayed."
+  :type '(choice (const :tag "Display fork symbol and branch name" 'full)
+                 (const :tag "Display fork symbol only" t)
+                 (const :tag "Do not display any version control information" nil)))
 
 (defface zerodark-ro-face
   '((t :foreground "#0088CC" :weight bold))
@@ -132,9 +138,10 @@
                                                                      :v-adjust 0
                                                                      :face (when (zerodark--active-window-p)
                                                                              (zerodark-git-face))))
-                                        (:eval (propertize (truncate-string-to-width vc-mode 25 nil nil "...")
-                                                           'face (when (zerodark--active-window-p)
-                                                                   (zerodark-git-face)))))))
+                                        (:eval (when (eq zerodark-theme-display-vc-status 'full)
+                                                 (propertize (truncate-string-to-width vc-mode 25 nil nil "...")
+                                                             'face (when (zerodark--active-window-p)
+                                                                     (zerodark-git-face))))))))
 
 (defun zerodark-modeline-flycheck-status ()
   "Return the status of flycheck to be displayed in the mode-line."
@@ -817,7 +824,9 @@ The result is cached for one second to avoid hiccups."
                   " "
                   ,zerodark-modeline-buffer-identification
                   ,zerodark-modeline-position
-                  ,zerodark-modeline-vc
+                  ,(if zerodark-theme-display-vc-status
+                       zerodark-modeline-vc
+                     "")
                   "  "
                   (:eval (zerodark-modeline-flycheck-status))
                   "  " mode-line-modes mode-line-misc-info mode-line-end-spaces
