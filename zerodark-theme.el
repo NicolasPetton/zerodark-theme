@@ -1,6 +1,6 @@
 ;;; zerodark-theme.el --- A dark, medium contrast theme for Emacs -*- lexical-binding: t -*-
 
-;; Copyright (C) 2015-2016  Nicolas Petton
+;; Copyright (C) 2015-2018  Nicolas Petton
 
 ;; Author: Nicolas Petton <nicolas@petton.fr>
 ;; Keywords: themes

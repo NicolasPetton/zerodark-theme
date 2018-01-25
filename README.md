@@ -79,7 +79,7 @@ Zerodark supports for many packages, including the following:
 
     M-x package-install RET zerodark-theme
 
-Copyright 2015-2017 (C) Nicolas Petton
+Copyright 2015-2018 (C) Nicolas Petton
 
 ## Setup
 
