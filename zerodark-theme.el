@@ -251,6 +251,7 @@ The result is cached for one second to avoid hiccups."
    `(isearch ((,class (:background ,orange-light :foreground ,highlight))))
    `(lazy-highlight ((,class (:background ,grey-dark :foreground ,orange-light))))
    `(hl-line ((,class (:background ,hl-line :underline unspecified :inherit nil))))
+   `(shadow ((,class (:foreground ,comment))))
 
    `(match ((,class (:background ,background-green))))
 
