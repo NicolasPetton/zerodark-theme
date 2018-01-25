@@ -79,8 +79,6 @@ Zerodark supports for many packages, including the following:
 
     M-x package-install RET zerodark-theme
 
-Copyright 2015-2018 (C) Nicolas Petton
-
 ## Setup
 
 Add the following to you `init.el`:
@@ -90,3 +88,5 @@ Add the following to you `init.el`:
 	(zerodark-setup-modeline-format)
 	
 Or execute `M-x load-theme RET zerodark RET`.
+
+Copyright 2015-2018 (C) Nicolas Petton
