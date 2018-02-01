@@ -676,6 +676,8 @@ The result is cached for one second to avoid hiccups."
    `(font-latex-math-face ((,class :foreground ,green-light)))
    `(font-latex-sectioning-5-face ((,class :foreground ,blue)))
    `(font-latex-string-face ((,class :inherit font-lock-string-face)))
+   `(font-latex-bold-face ((,class :foreground ,green :weight bold)))
+   `(font-latex-italic-face ((,class :foreground ,green :slant italic)))
    `(font-latex-warning-face ((,class :inherit warning)))
 
    ;; Anzu
