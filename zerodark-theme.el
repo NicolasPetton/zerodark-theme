@@ -628,6 +628,12 @@ The result is cached for one second to avoid hiccups."
    `(diff-hl-delete ((,class (:foreground ,red :background ,background-red))))
    `(diff-hl-insert ((,class (:foreground ,green :background ,background-green))))
 
+   `(git-gutter:added ((,class (:foreground ,green :background ,background-green))))
+   `(git-gutter:deleted ((,class (:foreground ,red :background ,background-red))))
+   `(git-gutter:modified ((,class (:foreground ,purple :background ,background-purple))))
+   `(git-gutter:separator ((,class (:background ,background-orange))))
+   `(git-gutter:unchanged ((,class (:background ,background-orange))))
+
    `(term-color-black ((,class (:foreground ,default :background ,background-darker))))
    `(term-color-red ((,class (:foreground ,red :background ,background-red))))
    `(term-color-green ((,class (:foreground ,green :background ,background-green))))
