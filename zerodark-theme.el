@@ -516,6 +516,11 @@ The result is cached for one second to avoid hiccups."
    `(org-block-begin-line ((,class (:background ,background-green :foreground ,green-light :height 0.9))))
    `(org-block-end-line ((,class (:background ,background-green :foreground ,green-light :height 0.9))))
 
+   ;; org-drill
+   `(org-drill-hidden-cloze-face ((,class (:background ,red :foreground ,background))))
+   `(org-drill-visible-cloze-face ((,class (:background ,blue :foreground ,background-blue))))
+   `(org-drill-visible-cloze-hint-face ((,class (:background ,green :foreground ,background-green))))
+
    ;; Gnus faces -- from wombat, feel free to improve :)
    `(gnus-group-news-1 ((,class (:weight bold :foreground "#95e454"))))
    `(gnus-group-news-1-low ((,class (:foreground "#95e454"))))
