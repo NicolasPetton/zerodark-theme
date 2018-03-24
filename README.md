@@ -84,9 +84,13 @@ Zerodark supports for many packages, including the following:
 Add the following to you `init.el`:
 
     (load-theme 'zerodark t)
-	;; Optionally setup the modeline
+    (zerodark-load-true-color)
+    ;; Alternativel load the 256 color format for terminal use
+    ;; (zerodark-load-256-color)
+
+    ;; Optionally setup the modeline
 	(zerodark-setup-modeline-format)
-	
-Or execute `M-x load-theme RET zerodark RET`.
+
+Or execute `M-x load-theme RET zerodark RET` and `M-x zerodark-load-true-color RET`..
 
 Copyright 2015-2018 (C) Nicolas Petton
