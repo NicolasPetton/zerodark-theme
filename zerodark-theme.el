@@ -629,9 +629,9 @@ The result is cached for one second to avoid hiccups."
    `(ledger-font-other-face ((,class (:inherit ,font-lock-comment-face))))
    `(ledger-font-periodic-xact-face ((,class (:foreground ,orange))))
 
-   `(diff-hl-change ((,class (:foreground ,purple :background ,background-purple))))
-   `(diff-hl-delete ((,class (:foreground ,red :background ,background-red))))
-   `(diff-hl-insert ((,class (:foreground ,green :background ,background-green))))
+   `(diff-hl-change ((,class (:foreground ,background-purple :background ,background-purple))))
+   `(diff-hl-delete ((,class (:foreground ,background-red :background ,background-red))))
+   `(diff-hl-insert ((,class (:foreground ,background-green :background ,background-green))))
 
    `(git-gutter:added ((,class (:foreground ,green :background ,background-green))))
    `(git-gutter:deleted ((,class (:foreground ,red :background ,background-red))))
