@@ -560,7 +560,7 @@ The result is cached for one second to avoid hiccups."
    `(ivy-current-match ((,class (:background ,background-purple :weight bold :foreground ,purple))))
    `(ivy-minibuffer-match-face-1 ((,class (:foreground ,orange))))
    `(ivy-minibuffer-match-face-2 ((,class (:foreground ,green))))
-   `(ivy-minibuffer-match-face-3 ((,class (:foreground ,orange))))
+   `(ivy-minibuffer-match-face-3 ((,class (:foreground ,green))))
    `(ivy-minibuffer-match-face-4 ((,class (:foreground ,green))))
    `(ivy-match-required-face ((,class (:foreground ,red :background ,background-red :weight bold))))
    `(ivy-modified-buffer ((,class (:foreground ,red))))
