@@ -34,8 +34,6 @@
 
 ;;; Code:
 
-(require 'all-the-icons)
-
 (defmacro cached-for (secs &rest body)
   "Cache for SECS the result of the evaluation of BODY."
   (declare (debug t))
@@ -805,6 +803,7 @@ The result is cached for one second to avoid hiccups."
   (interactive)
   (require 'flycheck)
   (require 'magit)
+  (require 'all-the-icons)
   (let ((class '((class color) (min-colors 89)))
         (light (if (true-color-p) "#ccd4e3" "#d7d7d7"))
         (comment (if (true-color-p) "#687080" "#707070"))
