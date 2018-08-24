@@ -7,7 +7,7 @@
 ;; URL: https://github.com/NicolasPetton/zerodark-theme
 ;; Version: 4.3
 ;; Package: zerodark-theme
-;; Package-Requires: ((all-the-icons "2.0.0") (magit "2.8.0") (flycheck "29"))
+;; Package-Requires: ((all-the-icons "2.0.0"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
