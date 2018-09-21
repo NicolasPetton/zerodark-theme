@@ -538,10 +538,10 @@ The result is cached for one second to avoid hiccups."
    `(gnus-group-mail-3 ((,class (:weight bold :foreground "#ccaa8f"))))
    `(gnus-group-mail-3-low ((,class (:foreground "#ccaa8f"))))
    `(gnus-group-mail-low ((,class (:foreground "#99968b"))))
-   `(gnus-header-content ((,class (:foreground "#8ac6f2"))))
+   `(gnus-header-content ((,class (:foreground ,purple))))
    `(gnus-header-from ((,class (:weight bold :foreground "#95e454"))))
-   `(gnus-header-subject ((,class (:foreground "#cae682"))))
-   `(gnus-header-name ((,class (:foreground "#8ac6f2"))))
+   `(gnus-header-subject ((,class (:foreground ,green))))
+   `(gnus-header-name ((,class (:foreground ,blue))))
    `(gnus-header-newsgroups ((,class (:foreground "#cae682"))))
 
    ;; which-function
