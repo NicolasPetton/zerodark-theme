@@ -656,13 +656,13 @@ The result is cached for one second to avoid hiccups."
    `(avy-lead-face-1 ((,class :foreground ,blue :background ,background-blue)))
    `(avy-lead-face-2 ((,class :foreground ,green :background ,background-green)))
 
-   `(erc-nick-default-face ((,class :foreground ,blue :background ,background-blue :weight bold)))
-   `(erc-current-nick-face ((,class :foreground ,red :weight bold :background ,background-red)))
-   `(erc-my-nick-face ((,class :foreground ,red :weight bold :background ,background-red)))
+   `(erc-nick-default-face ((,class :foreground ,blue :background ,background)))
+   `(erc-current-nick-face ((,class :foreground ,purple :weight bold)))
+   `(erc-my-nick-face ((,class :foreground ,purple :weight bold)))
    `(erc-notice-face ((,class :foreground ,comment)))
-   `(erc-input-face ((,class :foreground ,default :weight bold)))
-   `(erc-prompt-face ((,class :foreground ,purple :background ,background-purple :weight bold :box 1)))
-   `(erc-timestamp-face ((,class :foreground ,purple :weight bold)))
+   `(erc-input-face ((,class :foreground ,purple :slant italic)))
+   `(erc-prompt-face ((,class :foreground ,purple :background ,background :weight bold)))
+   `(erc-timestamp-face ((,class :foreground ,purple)))
 
    ;; slack
    `(slack-message-output-header ((,class :foreground ,blue :background ,background-blue :weight bold)))
