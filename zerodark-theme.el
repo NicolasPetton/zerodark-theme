@@ -448,6 +448,12 @@ The result is cached for one second to avoid hiccups."
    `(notmuch-tree-match-author-face ((,class (:foreground ,purple))))
    `(notmuch-tree-match-tag-face ((,class (:foreground ,green :weight bold))))
 
+   ;; mu4e
+   `(mu4e-highlight-face ((,class (:foreground ,purple :background ,background :weight bold))))
+   `(mu4e-header-value-face ((,class (:foreground ,purple))))
+   `(mu4e-contact-face ((,class (:foreground ,purple))))
+   `(mu4e-special-header-value-face ((,class (:foreground ,green :weight bold))))
+
    ;; company
    `(company-preview ((,class (:background ,background-darker :foreground ,default))))
    `(company-preview-common ((,class (:background ,background-darker :foreground ,purple))))
