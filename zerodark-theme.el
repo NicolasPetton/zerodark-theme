@@ -403,6 +403,8 @@ The result is cached for one second to avoid hiccups."
    `(magit-reflog-checkout ((,class (:background ,background-orange :foreground ,orange :weight bold))))
    `(magit-reflog-cherry-pick ((,class (:background ,background-purple :foreground ,purple :weight bold))))
 
+   `(magit-refname-pullreq ((,class (:background , background-orange :foreground ,orange :weight bold))))
+
    `(magit-bisect-bad ((,class (:background ,background-red :foreground ,red :box 1))))
    `(magit-bisect-good ((,class (:background ,background-blue :foreground ,blue :box 1))))
 
