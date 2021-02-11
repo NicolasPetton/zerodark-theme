@@ -200,7 +200,6 @@ The result is cached for one second to avoid hiccups."
       (default (if (true-color-p) "#abb2bf" "#afafaf"))
       (light (if (true-color-p) "#ccd4e3" "#d7d7d7"))
       (background (if (true-color-p) "#282c34" "#333333"))
-      (background-dark (if (true-color-p) "#24282f" "#222222"))
       (background-darker (if (true-color-p) "#22252c" "#222222"))
       (mode-line-inactive (if "#1c2129" "#222222"))
       (mode-line-active (if (true-color-p) "#6f337e" "#875f87"))
@@ -240,7 +239,7 @@ The result is cached for one second to avoid hiccups."
    `(cursor ((,class (:background ,default))))
 
    ;; Highlighting faces
-   `(fringe ((,class (:background ,background-dark :foreground ,comment))))
+   `(fringe ((,class (:background ,background :foreground ,comment))))
    `(border ((,class (:foreground ,background-lighter))))
    `(vertical-border ((,class (:foreground ,background-lighter))))
    `(highlight ((,class (:background ,highlight :foreground ,default :underline nil))))
