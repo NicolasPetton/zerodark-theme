@@ -497,6 +497,7 @@ The result is cached for one second to avoid hiccups."
    `(org-scheduled ((,class (:foreground ,default))))
    `(org-upcoming-deadline ((,class (:foreground ,orange))))
    `(org-headline-done ((,class (:foreground ,comment))))
+   `(org-document-title ((,class (:foreground ,orange))))
    `(outline-1 ((,class (:foreground ,blue :weight bold))))
    `(outline-2 ((,class (:foreground ,purple :weight bold))))
    `(outline-3 ((,class (:foreground ,peach :weight bold))))
