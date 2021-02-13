@@ -43,7 +43,7 @@ in `all-the-icons` repository as explained in its README:
 
 ### Supported packages
 
-Zerodark supports for many packages, including the following:
+Zerodark has supports for many packages, including the following:
 
 - ace-window
 - anzu
@@ -89,4 +89,4 @@ Add the following to you `init.el`:
 	
 Or execute `M-x load-theme RET zerodark RET`.
 
-Copyright 2015-2018 (C) Nicolas Petton
+Copyright 2015-2021 (C) Nicolas Petton
