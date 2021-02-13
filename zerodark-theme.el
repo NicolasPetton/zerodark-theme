@@ -1,6 +1,6 @@
 ;;; zerodark-theme.el --- A dark, medium contrast theme for Emacs -*- lexical-binding: t -*-
 
-;; Copyright (C) 2015-2018  Nicolas Petton
+;; Copyright (C) 2015-2021  Nicolas Petton
 
 ;; Author: Nicolas Petton <nicolas@petton.fr>
 ;; Keywords: themes
@@ -201,8 +201,6 @@ The result is cached for one second to avoid hiccups."
       (light (if (true-color-p) "#ccd4e3" "#d7d7d7"))
       (background (if (true-color-p) "#282c34" "#333333"))
       (background-darker (if (true-color-p) "#22252c" "#222222"))
-      (mode-line-inactive (if "#1c2129" "#222222"))
-      (mode-line-active (if (true-color-p) "#6f337e" "#875f87"))
       (background-lighter (if (true-color-p) "#3a3f4b" "#5f5f5f"))
       (background-red (if (true-color-p) "#4c3840" "#5f5f5f"))
       (bright-background-red (if (true-color-p) "#744a5b" "#744a5b"))
