@@ -497,14 +497,14 @@ The result is cached for one second to avoid hiccups."
    `(org-scheduled ((,class (:foreground ,default))))
    `(org-upcoming-deadline ((,class (:foreground ,orange))))
    `(org-headline-done ((,class (:foreground ,comment))))
-   `(org-document-title ((,class (:foreground ,orange))))
-   `(outline-1 ((,class (:foreground ,blue :weight bold))))
-   `(outline-2 ((,class (:foreground ,purple :weight bold))))
-   `(outline-3 ((,class (:foreground ,peach :weight bold))))
+   `(org-document-title ((,class (:foreground ,orange :height 1.5))))
+   `(outline-1 ((,class (:foreground ,peach :weight bold :height 1.3))))
+   `(outline-2 ((,class (:foreground ,purple :weight bold :height 1.2))))
+   `(outline-3 ((,class (:foreground ,blue :weight bold :height 1.1))))
    `(outline-4 ((,class (:foreground ,green-light :weight bold))))
-   `(outline-5 ((,class (:foreground ,blue :weight bold))))
+   `(outline-5 ((,class (:foreground ,peach :weight bold))))
    `(outline-6 ((,class (:foreground ,purple :weight bold))))
-   `(outline-7 ((,class (:foreground ,peach :weight bold))))
+   `(outline-7 ((,class (:foreground ,blue :weight bold))))
    `(outline-8 ((,class (:foreground ,green-light :weight bold))))
    `(org-column-title ((,class (:foreground unspecified :background unspecified))))
    `(org-agenda-date ((,class (:foreground ,purple :weight bold))))
@@ -513,20 +513,24 @@ The result is cached for one second to avoid hiccups."
    `(org-scheduled-today ((,class (:foreground ,default :weight bold))))
    `(org-agenda-done ((,class (:foreground ,comment))))
    `(org-time-grid ((,class (:foreground ,comment))))
+   `(org-drawer ((,class (:inherit shadow))))
 
    ;; org columns
    `(org-column ((,class (:background ,background-darker))))
    `(org-column-title ((,class (:background ,background-blue :foreground ,blue :weight bold))))
 
    ;; org blocks
-   `(org-block-begin-line ((,class (:background ,background-green :foreground ,green-light :height 0.9))))
-   `(org-block-end-line ((,class (:background ,background-green :foreground ,green-light :height 0.9))))
-   `(org-block ((,class (:background ,background :foreground ,default))))
+   `(org-block-begin-line ((,class (:background ,bright-background-blue :foreground ,default :height 0.9 :extend t))))
+   `(org-block-end-line ((,class (:background ,bright-background-blue :foreground ,default :height 0.9 :extend t))))
+   `(org-block ((,class (:background ,background-blue :foreground ,default :extend t))))
 
    ;; org-drill
    `(org-drill-hidden-cloze-face ((,class (:background ,red :foreground ,background))))
    `(org-drill-visible-cloze-face ((,class (:background ,blue :foreground ,background-blue))))
    `(org-drill-visible-cloze-hint-face ((,class (:background ,green :foreground ,background-green))))
+
+   ;; org-Roam
+   `(org-roam-link ((,class (:background ,background-blue :foreground ,blue :weight bold))))
 
    ;; Gnus faces -- from wombat, feel free to improve :)
    `(gnus-group-news-1 ((,class (:weight bold :foreground "#95e454"))))
