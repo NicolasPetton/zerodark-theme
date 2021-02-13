@@ -202,6 +202,7 @@ The result is cached for one second to avoid hiccups."
       (background (if (true-color-p) "#282c34" "#333333"))
       (background-darker (if (true-color-p) "#22252c" "#222222"))
       (background-lighter (if (true-color-p) "#3a3f4b" "#5f5f5f"))
+      (mode-line (if (true-color-p) "#1c2129" "#222222"))
       (background-red (if (true-color-p) "#4c3840" "#5f5f5f"))
       (bright-background-red (if (true-color-p) "#744a5b" "#744a5b"))
       (background-purple (if (true-color-p) "#48384c" "#5f5f5f"))
@@ -263,12 +264,12 @@ The result is cached for one second to avoid hiccups."
    `(font-lock-warning-face ((,class (:foreground ,red :weight bold :background ,background-red))))
 
    ;; Mode line faces
-   `(mode-line ((,class (:background ,background-blue :height 0.9 :foreground ,blue
+   `(mode-line ((,class (:background ,mode-line :height 0.9 :foreground ,light
                                      :box ,(when zerodark-use-paddings-in-mode-line
-                                             (list :line-width 6 :color background-blue))))))
-   `(mode-line-inactive ((,class (:background ,background-darker :height 0.9 :foreground ,default
+                                             (list :line-width 6 :color mode-line))))))
+   `(mode-line-inactive ((,class (:background ,mode-line :height 0.9 :foreground ,comment
                                               :box ,(when zerodark-use-paddings-in-mode-line
-                                                      (list :line-width 6 :color background-darker))))))
+                                                      (list :line-width 6 :color mode-line))))))
    `(header-line ((,class (:inherit mode-line-inactive))))
 
    ;; error & success
@@ -815,28 +816,6 @@ The result is cached for one second to avoid hiccups."
   (require 'flycheck)
   (require 'magit)
   (require 'all-the-icons)
-  (let ((class '((class color) (min-colors 89)))
-        (light (if (true-color-p) "#ccd4e3" "#d7d7d7"))
-        (comment (if (true-color-p) "#687080" "#707070"))
-        (purple "#c678dd")
-        (mode-line (if "#1c2129" "#222222")))
-    (custom-theme-set-faces
-     'zerodark
-
-     ;; Mode line faces
-     `(mode-line ((,class (:background ,mode-line
-                                       :height 0.9
-                                       :foreground ,light
-                                       :box ,(when zerodark-use-paddings-in-mode-line
-                                               (list :line-width 6 :color mode-line))))))
-     `(mode-line-inactive ((,class (:background ,mode-line
-                                                :height 0.9
-                                                :foreground ,comment
-                                                :box ,(when zerodark-use-paddings-in-mode-line
-                                                        (list :line-width 6 :color mode-line))))))
-     `(anzu-mode-line ((,class :inherit mode-line :foreground ,purple :weight bold)))
-     ))
-
   (setq-default mode-line-format
                 `("%e"
                   " "
