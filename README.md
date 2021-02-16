@@ -1,6 +1,4 @@
-Zerodark Emacs theme [![MELPA](http://melpa.org/packages/zerodark-theme-badge.svg)](http://melpa.org/#/zerodark-theme)[![Gratipay Team](https://img.shields.io/gratipay/team/zerodark-theme.svg?maxAge=2592000)](https://gratipay.com/zerodark-theme/)
-
-===============================================================================
+Zerodark Emacs theme [![MELPA](http://melpa.org/packages/zerodark-theme-badge.svg)](http://melpa.org/#/zerodark-theme) [![Liberapay](https://img.shields.io/liberapay/receives/NicolasPetton.svg?logo=liberapay)](https://liberapay.com/NicolasPetton)
 
 A dark theme for [Emacs](https://www.gnu.org/software/emacs/), inspired from [Niflheim](https://github.com/niflheim-theme/emacs) and [One Dark](https://github.com/atom/one-dark-syntax)
 
