@@ -491,7 +491,7 @@ The result is cached for one second to avoid hiccups."
    `(org-hide ((,class (:foreground ,background))))
    `(org-todo ((,class (:foreground ,red :background ,background-red :weight bold))))
    `(org-done ((,class (:foreground ,green :background ,background-green :weight bold))))
-   `(org-date ((,class (:background ,background-lighter))))
+   `(org-date ((,class (:background ,purple :background ,background-purple :weight bold))))
    `(org-scheduled-previously ((,class (:foreground ,red))))
    `(org-scheduled ((,class (:foreground ,default))))
    `(org-upcoming-deadline ((,class (:foreground ,orange))))
