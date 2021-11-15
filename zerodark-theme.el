@@ -481,7 +481,7 @@ The result is cached for one second to avoid hiccups."
    `(flycheck-fringe-error ((,class (:foreground ,red :background ,background-red :weight bold :inverse-video t))))
    `(flycheck-fringe-warning ((,class (:background ,background-orange :foreground ,orange :weight bold :inverse-video t))))
    `(flycheck-fringe-info ((,class (:background ,background-blue :foreground ,blue :weight bold :inverse-video t))))
-   `(flycheck-warning ((,class (:underline (:color ,red :style wave)))))
+   `(flycheck-warning ((,class (:underline (:color ,orange :style wave)))))
    `(flycheck-error ((,class (:underline (:color ,red :style wave)))))
 
    ;; FIC
